@@ -55,21 +55,21 @@
             {
               "name" : "description",
               "in" : "body",
-              "require" : true,
+              "required" : true,
               "type": "string",
               "description": "Description of product."
             },
             {
               "name" : "display_name",
               "in" : "body",
-              "require" : true,
+              "required" : true,
               "type": "string",
               "description": "Display name of product."
             },
             {
               "name" : "category",
               "in" : "body",
-              "require" : true,
+              "required" : true,
               "type": "string",
               "description": "Product category."
             }
@@ -109,27 +109,27 @@
             {
               "name" : "product_id",
               "in" : "URL",
-              "require" : true,
+              "required" : true,
               "type": "integer",
               "description": "Product ID."
             },{
               "name" : "description",
               "in" : "body",
-              "require" : false,
+              "required" : false,
               "type": "string",
               "description": "Description of product."
             },
             {
               "name" : "display_name",
               "in" : "body",
-              "require" : false,
+              "required" : false,
               "type": "string",
               "description": "Display name of product."
             },
             {
               "name" : "category",
               "in" : "body",
-              "require" : false,
+              "required" : false,
               "type": "string",
               "description": "Product category."
             }
@@ -161,33 +161,33 @@
           }
         },
         "put":  {
-          "summary": "Product patch",
+          "summary": "Product put",
           "description": "Update a all of a product's attributes.",
           "parameters": [
             {
               "name" : "product_id",
               "in" : "URL",
-              "require" : true,
+              "required" : true,
               "type": "integer",
               "description": "Product ID."
             },{
               "name" : "description",
               "in" : "body",
-              "require" : true,
+              "required" : true,
               "type": "string",
               "description": "Description of product."
             },
             {
               "name" : "display_name",
               "in" : "body",
-              "require" : true,
+              "required" : true,
               "type": "string",
               "description": "Display name of product."
             },
             {
               "name" : "category",
               "in" : "body",
-              "require" : true,
+              "required" : true,
               "type": "string",
               "description": "Product category."
             }
@@ -219,13 +219,13 @@
           }
         },
         "delete" :{
-          "summary": "Product - Delete one",
+          "summary": "Product delete",
           "description": "Delete a product with a give ID.",
           "parameters": [
             {
               "name" : "product_id",
               "in" : "URL",
-              "require" : true,
+              "required" : true,
               "type": "integer",
               "description": "Product ID."
             }

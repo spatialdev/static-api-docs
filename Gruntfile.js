@@ -21,9 +21,6 @@ module.exports = function (grunt) {
 
     // Configuration to be run (and then tested).
     static_api_docs: {
-      options: {
-        imageDir: 'tmp'
-      },
       test: {
         src: 'test/fixtures/swagger.json',
         dest: 'tmp',

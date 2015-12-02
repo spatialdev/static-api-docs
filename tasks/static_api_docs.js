@@ -12,7 +12,8 @@ var fs = require('fs');
 var nunjucks = require('nunjucks');
 var lodash = require('lodash');
 var jsonRefs = require('json-refs');
-var copy = require('copy');
+var images = require('images');
+var mkdirp = require('mkdir-p');
 
 nunjucks.configure({ autoescape: true });
 
@@ -43,11 +44,12 @@ module.exports = function (grunt) {
     var swaggerJSON = require(process.cwd() + '/' + this.data.src);
     var apiModel = jsonRefs.resolveLocalRefs(swaggerJSON).resolved;
 
-    // directory to copy and source images - from Gruntfile
-    var imgDir  = options.imageDir || this.data.dest;
-    apiModel.imageDir = imgDir + '/';
-
-    copy.dirSync('images/', imgDir);
+    mkdirp.sync(this.data.dest);
+    images(__dirname +'/../images/get.png').save(this.data.dest+'/get.png');
+    images(__dirname +'/../images/post.png').save(this.data.dest+'/post.png');
+    images(__dirname +'/../images/put.png').save(this.data.dest+'/put.png');
+    images(__dirname +'/../images/patch.png').save(this.data.dest+'/patch.png');
+    images(__dirname +'/../images/delete.png').save(this.data.dest+'/delete.png');
 
     var fileName = options.filename ||  "api-doc";
     var markdownOutputFile = this.data.dest + '/' + fileName + ".md";

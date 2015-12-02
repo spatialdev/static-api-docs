@@ -2,17 +2,17 @@
 #### Table of Contents
 
 
-[/products](#/products_get)&nbsp;&nbsp;![GET](tmp/get.png)&nbsp;&nbsp;&nbsp;&nbsp;Products
+[/products](#/products_get)&nbsp;&nbsp;![GET](get.png)&nbsp;&nbsp;&nbsp;&nbsp;Products
 
-[/products](#/products_post)&nbsp;&nbsp;![POST](tmp/post.png)&nbsp;&nbsp;&nbsp;&nbsp;Create Product
+[/products](#/products_post)&nbsp;&nbsp;![POST](post.png)&nbsp;&nbsp;&nbsp;&nbsp;Create Product
 
 
 
-[/products/:product_id](#/products/:product_id_patch)&nbsp;&nbsp;![PATCH](tmp/patch.png)&nbsp;&nbsp;&nbsp;&nbsp;Product patch
+[/products/:product_id](#/products/:product_id_patch)&nbsp;&nbsp;![PATCH](patch.png)&nbsp;&nbsp;&nbsp;&nbsp;Product patch
 
-[/products/:product_id](#/products/:product_id_put)&nbsp;&nbsp;![PUT](tmp/put.png)&nbsp;&nbsp;&nbsp;&nbsp;Product patch
+[/products/:product_id](#/products/:product_id_put)&nbsp;&nbsp;![PUT](put.png)&nbsp;&nbsp;&nbsp;&nbsp;Product patch
 
-[/products/:product_id](#/products/:product_id_delete)&nbsp;&nbsp;![DELETE](tmp/delete.png)&nbsp;&nbsp;&nbsp;&nbsp;Delete product
+[/products/:product_id](#/products/:product_id_delete)&nbsp;&nbsp;![DELETE](delete.png)&nbsp;&nbsp;&nbsp;&nbsp;Delete product
 
 
 
@@ -20,7 +20,7 @@
 <br/>
 
 
-#### <a id="/products_get">/products</a>&nbsp;&nbsp;![GET](tmp/get.png)
+#### <a id="/products_get">/products</a>&nbsp;&nbsp;![GET](get.png)
 
 Get all products with all attributes.
 
@@ -46,7 +46,7 @@ Get all products with all attributes.
 |fields|string||
 
 
-#### <a id="/products_post">/products</a>&nbsp;&nbsp;![POST](tmp/post.png)
+#### <a id="/products_post">/products</a>&nbsp;&nbsp;![POST](post.png)
 
 Create a product with the provided attributes.
 
@@ -73,7 +73,7 @@ Create a product with the provided attributes.
 
 
 
-#### <a id="/products/:product_id_patch">/products/:product_id</a>&nbsp;&nbsp;![PATCH](tmp/patch.png)
+#### <a id="/products/:product_id_patch">/products/:product_id</a>&nbsp;&nbsp;![PATCH](patch.png)
 
 Update a subset of a product&#39;s attributes.
 
@@ -99,7 +99,7 @@ Update a subset of a product&#39;s attributes.
 |fields|string||
 
 
-#### <a id="/products/:product_id_put">/products/:product_id</a>&nbsp;&nbsp;![PUT](tmp/put.png)
+#### <a id="/products/:product_id_put">/products/:product_id</a>&nbsp;&nbsp;![PUT](put.png)
 
 Update a all of a product&#39;s attributes.
 
@@ -125,7 +125,7 @@ Update a all of a product&#39;s attributes.
 |fields|string||
 
 
-#### <a id="/products/:product_id_delete">/products/:product_id</a>&nbsp;&nbsp;![DELETE](tmp/delete.png)
+#### <a id="/products/:product_id_delete">/products/:product_id</a>&nbsp;&nbsp;![DELETE](delete.png)
 
 Delete a product with a give ID.
 

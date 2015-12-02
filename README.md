@@ -25,9 +25,6 @@ In your project's Gruntfile, add a section named `static_api_docs` to the data o
 ```js
 grunt.initConfig({
   static_api_docs: {
-   options: {
-      imageDir: "path/to/directory/for/HTTP-VERB/icons"
-   }
    your_target: {
       src: "path/to/the/swagger/spec/JSON/for/API"
       dest: "path/to/the/destination/directory"
@@ -41,12 +38,6 @@ grunt.initConfig({
 
 ### Options
 
-#### options.imageDir
-Type: `String`
-Default value:  `same directory as target's destination`
-
-Directory to store HTTP Verb icons used in generated markdown file
-
 #### target.options.filename
 Type: `String`
 Default value: `'api-doc'`
@@ -59,9 +50,6 @@ A string value that will be the root of the generated files (api-doc.md, api-doc
 ```js
 grunt.initConfig({
   static_api_docs: {
-    options: {
-        imageDir: 'images'
-      },
     test: {
       src: 'swagger.json',
       dest: 'outputDir',

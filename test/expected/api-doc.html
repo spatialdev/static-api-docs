@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>API</title>
+</head>
+<body>
+<div style="font-family: sans-serif;">
+    <h2>Uber API: v1.0.0</h2>
+    <div style="list-style-type:none; padding:0;" >
+        
+        
+            <div style="margin-bottom: 12px;margin-top: 3px;"><a style ="font-family: monospace;
+               font-size: 1.2em; text-decoration: none" href="#/products_get">
+                <span style="color:#08C;">/products</span>
+                <div style="display: inline-block; color: #FFF; border-radius: 3px; padding: .25em .5em;
+                         background-color: #2392f7;
+                        ">GET</div></a></div>
+        
+            <div style="margin-bottom: 12px;margin-top: 3px;"><a style ="font-family: monospace;
+               font-size: 1.2em; text-decoration: none" href="#/products_post">
+                <span style="color:#08C;">/products</span>
+                <div style="display: inline-block; color: #FFF; border-radius: 3px; padding: .25em .5em;
+                         background-color: #13c20f;
+                        ">POST</div></a></div>
+        
+    
+        
+            <div style="margin-bottom: 12px;margin-top: 3px;"><a style ="font-family: monospace;
+               font-size: 1.2em; text-decoration: none" href="#/products/:product_id_patch">
+                <span style="color:#08C;">/products/:product_id</span>
+                <div style="display: inline-block; color: #FFF; border-radius: 3px; padding: .25em .5em;
+                         background-color: #ff9000;
+                        ">PATCH</div></a></div>
+        
+            <div style="margin-bottom: 12px;margin-top: 3px;"><a style ="font-family: monospace;
+               font-size: 1.2em; text-decoration: none" href="#/products/:product_id_put">
+                <span style="color:#08C;">/products/:product_id</span>
+                <div style="display: inline-block; color: #FFF; border-radius: 3px; padding: .25em .5em;
+                         background-color: #ffdc00;
+                        ">PUT</div></a></div>
+        
+            <div style="margin-bottom: 12px;margin-top: 3px;"><a style ="font-family: monospace;
+               font-size: 1.2em; text-decoration: none" href="#/products/:product_id_delete">
+                <span style="color:#08C;">/products/:product_id</span>
+                <div style="display: inline-block; color: #FFF; border-radius: 3px; padding: .25em .5em;
+                         background-color: #e30012;
+                        ">DELETE</div></a></div>
+        
+    
+    </div>
+</div>
+<hr>
+<div style="list-style-type:none; padding:0; font-family: sans-serif;">
+    
+    <div style="list-style-type:none; padding:0">
+        <header style ="font-family: monospace;
+               font-size: 1.5em;
+               margin-bottom: 12px;
+               margin-top: 3px; color:#333">/products</header>
+        <div style="list-style-type:none; padding:0">
+            
+            <div style="font-family: sans-serif;
+                  list-style-type: none;
+                  border-radius: 3px;
+                  position: relative;
+                  border: 1px solid #949493;
+                  background-color: #fff;
+                  margin-bottom: 30px">
+                <header style="overflow: hidden;
+                     cursor: pointer;
+                     display: table;
+                     width: 100%;
+                     min-height: 31px;
+                      background-color: rgba(35,146,247,.1);
+                        ">
+                    <div style="    font-family: monospace;
+                        font-size: 1pc;
+                        padding: .5em;
+                        display: table-cell;
+                        border-top-left-radius: 1px;
+                        margin-right: .4em;
+                        min-width: 68px;
+                        text-align: center;
+                         background-color: #2392f7;
+                        
+                        color: #ffffff;
+                        float:left"><a style="color:#FFFFFF" name="/products_get">/products GET</a>
+                    </div>
+                </header>
+                <div style="padding: 0 1em; font-size: 13px">
+                    <section>
+                        <h4 style="margin:.75em 0; font-size: 15px;line-height: 1.1;">Products</h4>
+                    </section>
+                    <section>
+                        <p style="margin: 0 0 12px;">Get all products with all attributes.</p>
+                    </section>
+                    <section>
+                        <h4 style="font-size: 15px;line-height: 1.1;">Parameters</h4>
+                        <div style="margin: .3em 0 .5em;">
+                            <table style="width: 100%;border-collapse: collapse;">
+                                <thead>
+                                <tr style="background-color: #f7f7f7; font-size: 14px">
+                                    <th style="padding: 6px 8px;border: #e0e0e0 1px solid">Name</th>
+                                    <th style="padding: 6px 8px;border: #e0e0e0 1px solid">Required</th>
+                                    <th style="padding: 6px 8px;border: #e0e0e0 1px solid">Located in</th>
+                                    <th style="padding: 6px 8px;border: #e0e0e0 1px solid">Type</th>
+                                    <th style="padding: 6px 8px;border: #e0e0e0 1px solid; width: 50%;
+                                       ">Description</th>
+
+                                </tr>
+                                </thead>
+                                <tbody>
+                                
+                                <tr>
+                                    <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">category</td>
+                                    <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">false</td>
+                                    <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">query</td>
+                                    <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">string ()</td>
+                                    <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">Filter by product category (e.g., &quot;gizmo&quot;)</td>
+                                </tr>
+                                
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                    <section>
+                        <div style=" margin: .3em 0 .5em;">
+
+                            
+                                <div>
+                                    <h4 style="font-size: 15px;line-height: 1.1;">
+                                    Success
+                                        200 (Object[])</h4>
+                                    <table style="width: 100%;border-collapse: collapse;">
+                                        <thead>
+                                        <tr style="background-color: #f7f7f7;">
+                                            <th style="padding: 6px 8px;border: #e0e0e0 1px solid">Field</th>
+                                            <th style="padding: 6px 8px;border: #e0e0e0 1px solid">Type</th>
+                                            <th style="padding: 6px 8px;border: #e0e0e0 1px solid">Description</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        
+
+                                        
+                                        
+
+                                        
+                                        <tr style="border-bottom: 1px solid silver;">
+                                            <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">product_id</td>
+                                            <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">string</td>
+                                            <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">Unique identifier representing a specific product for a given latitude &amp; longitude. For example, uberX in San Francisco will have a different product_id than uberX in Los Angeles.</td>
+                                        </tr>
+                                        
+                                        
+
+                                        
+                                        <tr style="border-bottom: 1px solid silver;">
+                                            <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">description</td>
+                                            <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">string</td>
+                                            <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">Description of product.</td>
+                                        </tr>
+                                        
+                                        
+
+                                        
+                                        <tr style="border-bottom: 1px solid silver;">
+                                            <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">display_name</td>
+                                            <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">string</td>
+                                            <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">Display name of product.</td>
+                                        </tr>
+                                        
+                                        
+
+                                        
+                                        <tr style="border-bottom: 1px solid silver;">
+                                            <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">category</td>
+                                            <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">string</td>
+                                            <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">Category of product. For example, &quot;gizmo&quot;.</td>
+                                        </tr>
+                                        
+                                        
+                                        </tbody>
+                                    </table>
+                                </div>
+                            
+                                <div>
+                                    <h4 style="font-size: 15px;line-height: 1.1;">
+                                    Error 
+                                        500 (Object)</h4>
+                                    <table style="width: 100%;border-collapse: collapse;">
+                                        <thead>
+                                        <tr style="background-color: #f7f7f7;">
+                                            <th style="padding: 6px 8px;border: #e0e0e0 1px solid">Field</th>
+                                            <th style="padding: 6px 8px;border: #e0e0e0 1px solid">Type</th>
+                                            <th style="padding: 6px 8px;border: #e0e0e0 1px solid">Description</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        
+
+                                        
+                                        
+
+                                        
+                                        <tr style="border-bottom: 1px solid silver;">
+                                            <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">code</td>
+                                            <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">integer</td>
+                                            <td style="padding: 12px 8px;border: #e0e0e0 1px solid;"></td>
+                                        </tr>
+                                        
+                                        
+
+                                        
+                                        <tr style="border-bottom: 1px solid silver;">
+                                            <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">message</td>
+                                            <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">string</td>
+                                            <td style="padding: 12px 8px;border: #e0e0e0 1px solid;"></td>
+                                        </tr>
+                                        
+                                        
+
+                                        
+                                        <tr style="border-bottom: 1px solid silver;">
+                                            <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">fields</td>
+                                            <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">string</td>
+                                            <td style="padding: 12px 8px;border: #e0e0e0 1px solid;"></td>
+                                        </tr>
+                                        
+                                        
+                                        </tbody>
+                                    </table>
+                                </div>
+                            
+
+                        </div>
+                    </section>
+                </div>
+            </div>
+            
+            <div style="font-family: sans-serif;
+                  list-style-type: none;
+                  border-radius: 3px;
+                  position: relative;
+                  border: 1px solid #949493;
+                  background-color: #fff;
+                  margin-bottom: 30px">
+                <header style="overflow: hidden;
+                     cursor: pointer;
+                     display: table;
+                     width: 100%;
+                     min-height: 31px;
+                      background-color: rgba(19,194,15,.1);
+                        ">
+                    <div style="    font-family: monospace;
+                        font-size: 1pc;
+                        padding: .5em;
+                        display: table-cell;
+                        border-top-left-radius: 1px;
+                        margin-right: .4em;
+                        min-width: 68px;
+                        text-align: center;
+                         background-color: #13c20f;
+                        
+                        color: #ffffff;
+                        float:left"><a style="color:#FFFFFF" name="/products_post">/products POST</a>
+                    </div>
+                </header>
+                <div style="padding: 0 1em; font-size: 13px">
+                    <section>
+                        <h4 style="margin:.75em 0; font-size: 15px;line-height: 1.1;">Create Product</h4>
+                    </section>
+                    <section>
+                        <p style="margin: 0 0 12px;">Create a product with the provided attributes.</p>
+                    </section>
+                    <section>
+                        <h4 style="font-size: 15px;line-height: 1.1;">Parameters</h4>
+                        <div style="margin: .3em 0 .5em;">
+                            <table style="width: 100%;border-collapse: collapse;">
+                                <thead>
+                                <tr style="background-color: #f7f7f7; font-size: 14px">
+                                    <th style="padding: 6px 8px;border: #e0e0e0 1px solid">Name</th>
+                                    <th style="padding: 6px 8px;border: #e0e0e0 1px solid">Required</th>
+                                    <th style="padding: 6px 8px;border: #e0e0e0 1px solid">Located in</th>
+                                    <th style="padding: 6px 8px;border: #e0e0e0 1px solid">Type</th>
+                                    <th style="padding: 6px 8px;border: #e0e0e0 1px solid; width: 50%;
+                                       ">Description</th>
+
+                                </tr>
+                                </thead>
+                                <tbody>
+                                
+                                <tr>
+                                    <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">description</td>
+                                    <td style="padding: 12px 8px;border: #e0e0e0 1px solid;"></td>
+                                    <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">body</td>
+                                    <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">string ()</td>
+                                    <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">Description of product.</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">display_name</td>
+                                    <td style="padding: 12px 8px;border: #e0e0e0 1px solid;"></td>
+                                    <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">body</td>
+                                    <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">string ()</td>
+                                    <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">Display name of product.</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">category</td>
+                                    <td style="padding: 12px 8px;border: #e0e0e0 1px solid;"></td>
+                                    <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">body</td>
+                                    <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">string ()</td>
+                                    <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">Product category.</td>
+                                </tr>
+                                
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                    <section>
+                        <div style=" margin: .3em 0 .5em;">
+
+                            
+                                <div>
+                                    <h4 style="font-size: 15px;line-height: 1.1;">
+                                    Success
+                                        200 (Object)</h4>
+                                    <table style="width: 100%;border-collapse: collapse;">
+                                        <thead>
+                                        <tr style="background-color: #f7f7f7;">
+                                            <th style="padding: 6px 8px;border: #e0e0e0 1px solid">Field</th>
+                                            <th style="padding: 6px 8px;border: #e0e0e0 1px solid">Type</th>
+                                            <th style="padding: 6px 8px;border: #e0e0e0 1px solid">Description</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        
+
+                                        
+                                        
+
+                                        
+                                        <tr style="border-bottom: 1px solid silver;">
+                                            <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">product_id</td>
+                                            <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">integer</td>
+                                            <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">New product&#39;s id.</td>
+                                        </tr>
+                                        
+                                        
+                                        </tbody>
+                                    </table>
+                                </div>
+                            
+                                <div>
+                                    <h4 style="font-size: 15px;line-height: 1.1;">
+                                    Error 
+                                        500 (Object)</h4>
+                                    <table style="width: 100%;border-collapse: collapse;">
+                                        <thead>
+                                        <tr style="background-color: #f7f7f7;">
+                                            <th style="padding: 6px 8px;border: #e0e0e0 1px solid">Field</th>
+                                            <th style="padding: 6px 8px;border: #e0e0e0 1px solid">Type</th>
+                                            <th style="padding: 6px 8px;border: #e0e0e0 1px solid">Description</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        
+
+                                        
+                                        
+
+                                        
+                                        <tr style="border-bottom: 1px solid silver;">
+                                            <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">code</td>
+                                            <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">integer</td>
+                                            <td style="padding: 12px 8px;border: #e0e0e0 1px solid;"></td>
+                                        </tr>
+                                        
+                                        
+
+                                        
+                                        <tr style="border-bottom: 1px solid silver;">
+                                            <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">message</td>
+                                            <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">string</td>
+                                            <td style="padding: 12px 8px;border: #e0e0e0 1px solid;"></td>
+                                        </tr>
+                                        
+                                        
+
+                                        
+                                        <tr style="border-bottom: 1px solid silver;">
+                                            <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">fields</td>
+                                            <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">string</td>
+                                            <td style="padding: 12px 8px;border: #e0e0e0 1px solid;"></td>
+                                        </tr>
+                                        
+                                        
+                                        </tbody>
+                                    </table>
+                                </div>
+                            
+
+                        </div>
+                    </section>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+    <div style="list-style-type:none; padding:0">
+        <header style ="font-family: monospace;
+               font-size: 1.5em;
+               margin-bottom: 12px;
+               margin-top: 3px; color:#333">/products/:product_id</header>
+        <div style="list-style-type:none; padding:0">
+            
+            <div style="font-family: sans-serif;
+                  list-style-type: none;
+                  border-radius: 3px;
+                  position: relative;
+                  border: 1px solid #949493;
+                  background-color: #fff;
+                  margin-bottom: 30px">
+                <header style="overflow: hidden;
+                     cursor: pointer;
+                     display: table;
+                     width: 100%;
+                     min-height: 31px;
+                      background-color:  rgba(255,144,0,.1);
+                        ">
+                    <div style="    font-family: monospace;
+                        font-size: 1pc;
+                        padding: .5em;
+                        display: table-cell;
+                        border-top-left-radius: 1px;
+                        margin-right: .4em;
+                        min-width: 68px;
+                        text-align: center;
+                         background-color: #ff9000;
+                        
+                        color: #ffffff;
+                        float:left"><a style="color:#FFFFFF" name="/products/:product_id_patch">/products/:product_id PATCH</a>
+                    </div>
+                </header>
+                <div style="padding: 0 1em; font-size: 13px">
+                    <section>
+                        <h4 style="margin:.75em 0; font-size: 15px;line-height: 1.1;">Product patch</h4>
+                    </section>
+                    <section>
+                        <p style="margin: 0 0 12px;">Update a subset of a product&#39;s attributes.</p>
+                    </section>
+                    <section>
+                        <h4 style="font-size: 15px;line-height: 1.1;">Parameters</h4>
+                        <div style="margin: .3em 0 .5em;">
+                            <table style="width: 100%;border-collapse: collapse;">
+                                <thead>
+                                <tr style="background-color: #f7f7f7; font-size: 14px">
+                                    <th style="padding: 6px 8px;border: #e0e0e0 1px solid">Name</th>
+                                    <th style="padding: 6px 8px;border: #e0e0e0 1px solid">Required</th>
+                                    <th style="padding: 6px 8px;border: #e0e0e0 1px solid">Located in</th>
+                                    <th style="padding: 6px 8px;border: #e0e0e0 1px solid">Type</th>
+                                    <th style="padding: 6px 8px;border: #e0e0e0 1px solid; width: 50%;
+                                       ">Description</th>
+
+                                </tr>
+                                </thead>
+                                <tbody>
+                                
+                                <tr>
+                                    <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">product_id</td>
+                                    <td style="padding: 12px 8px;border: #e0e0e0 1px solid;"></td>
+                                    <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">URL</td>
+                                    <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">integer ()</td>
+                                    <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">Product ID.</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">description</td>
+                                    <td style="padding: 12px 8px;border: #e0e0e0 1px solid;"></td>
+                                    <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">body</td>
+                                    <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">string ()</td>
+                                    <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">Description of product.</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">display_name</td>
+                                    <td style="padding: 12px 8px;border: #e0e0e0 1px solid;"></td>
+                                    <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">body</td>
+                                    <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">string ()</td>
+                                    <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">Display name of product.</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">category</td>
+                                    <td style="padding: 12px 8px;border: #e0e0e0 1px solid;"></td>
+                                    <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">body</td>
+                                    <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">string ()</td>
+                                    <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">Product category.</td>
+                                </tr>
+                                
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                    <section>
+                        <div style=" margin: .3em 0 .5em;">
+
+                            
+                                <div>
+                                    <h4 style="font-size: 15px;line-height: 1.1;">
+                                    Success
+                                        200 (Object)</h4>
+                                    <table style="width: 100%;border-collapse: collapse;">
+                                        <thead>
+                                        <tr style="background-color: #f7f7f7;">
+                                            <th style="padding: 6px 8px;border: #e0e0e0 1px solid">Field</th>
+                                            <th style="padding: 6px 8px;border: #e0e0e0 1px solid">Type</th>
+                                            <th style="padding: 6px 8px;border: #e0e0e0 1px solid">Description</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        
+
+                                        
+                                        
+
+                                        
+                                        <tr style="border-bottom: 1px solid silver;">
+                                            <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">product_id</td>
+                                            <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">integer</td>
+                                            <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">Updated product&#39;s id.</td>
+                                        </tr>
+                                        
+                                        
+                                        </tbody>
+                                    </table>
+                                </div>
+                            
+                                <div>
+                                    <h4 style="font-size: 15px;line-height: 1.1;">
+                                    Error 
+                                        500 (Object)</h4>
+                                    <table style="width: 100%;border-collapse: collapse;">
+                                        <thead>
+                                        <tr style="background-color: #f7f7f7;">
+                                            <th style="padding: 6px 8px;border: #e0e0e0 1px solid">Field</th>
+                                            <th style="padding: 6px 8px;border: #e0e0e0 1px solid">Type</th>
+                                            <th style="padding: 6px 8px;border: #e0e0e0 1px solid">Description</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        
+
+                                        
+                                        
+
+                                        
+                                        <tr style="border-bottom: 1px solid silver;">
+                                            <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">code</td>
+                                            <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">integer</td>
+                                            <td style="padding: 12px 8px;border: #e0e0e0 1px solid;"></td>
+                                        </tr>
+                                        
+                                        
+
+                                        
+                                        <tr style="border-bottom: 1px solid silver;">
+                                            <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">message</td>
+                                            <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">string</td>
+                                            <td style="padding: 12px 8px;border: #e0e0e0 1px solid;"></td>
+                                        </tr>
+                                        
+                                        
+
+                                        
+                                        <tr style="border-bottom: 1px solid silver;">
+                                            <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">fields</td>
+                                            <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">string</td>
+                                            <td style="padding: 12px 8px;border: #e0e0e0 1px solid;"></td>
+                                        </tr>
+                                        
+                                        
+                                        </tbody>
+                                    </table>
+                                </div>
+                            
+
+                        </div>
+                    </section>
+                </div>
+            </div>
+            
+            <div style="font-family: sans-serif;
+                  list-style-type: none;
+                  border-radius: 3px;
+                  position: relative;
+                  border: 1px solid #949493;
+                  background-color: #fff;
+                  margin-bottom: 30px">
+                <header style="overflow: hidden;
+                     cursor: pointer;
+                     display: table;
+                     width: 100%;
+                     min-height: 31px;
+                      background-color:  rgba(255,220,0,.1);
+                        ">
+                    <div style="    font-family: monospace;
+                        font-size: 1pc;
+                        padding: .5em;
+                        display: table-cell;
+                        border-top-left-radius: 1px;
+                        margin-right: .4em;
+                        min-width: 68px;
+                        text-align: center;
+                         background-color: #ffdc00;
+                        
+                        color: #ffffff;
+                        float:left"><a style="color:#FFFFFF" name="/products/:product_id_put">/products/:product_id PUT</a>
+                    </div>
+                </header>
+                <div style="padding: 0 1em; font-size: 13px">
+                    <section>
+                        <h4 style="margin:.75em 0; font-size: 15px;line-height: 1.1;">Product patch</h4>
+                    </section>
+                    <section>
+                        <p style="margin: 0 0 12px;">Update a all of a product&#39;s attributes.</p>
+                    </section>
+                    <section>
+                        <h4 style="font-size: 15px;line-height: 1.1;">Parameters</h4>
+                        <div style="margin: .3em 0 .5em;">
+                            <table style="width: 100%;border-collapse: collapse;">
+                                <thead>
+                                <tr style="background-color: #f7f7f7; font-size: 14px">
+                                    <th style="padding: 6px 8px;border: #e0e0e0 1px solid">Name</th>
+                                    <th style="padding: 6px 8px;border: #e0e0e0 1px solid">Required</th>
+                                    <th style="padding: 6px 8px;border: #e0e0e0 1px solid">Located in</th>
+                                    <th style="padding: 6px 8px;border: #e0e0e0 1px solid">Type</th>
+                                    <th style="padding: 6px 8px;border: #e0e0e0 1px solid; width: 50%;
+                                       ">Description</th>
+
+                                </tr>
+                                </thead>
+                                <tbody>
+                                
+                                <tr>
+                                    <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">product_id</td>
+                                    <td style="padding: 12px 8px;border: #e0e0e0 1px solid;"></td>
+                                    <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">URL</td>
+                                    <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">integer ()</td>
+                                    <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">Product ID.</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">description</td>
+                                    <td style="padding: 12px 8px;border: #e0e0e0 1px solid;"></td>
+                                    <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">body</td>
+                                    <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">string ()</td>
+                                    <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">Description of product.</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">display_name</td>
+                                    <td style="padding: 12px 8px;border: #e0e0e0 1px solid;"></td>
+                                    <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">body</td>
+                                    <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">string ()</td>
+                                    <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">Display name of product.</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">category</td>
+                                    <td style="padding: 12px 8px;border: #e0e0e0 1px solid;"></td>
+                                    <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">body</td>
+                                    <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">string ()</td>
+                                    <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">Product category.</td>
+                                </tr>
+                                
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                    <section>
+                        <div style=" margin: .3em 0 .5em;">
+
+                            
+                                <div>
+                                    <h4 style="font-size: 15px;line-height: 1.1;">
+                                    Success
+                                        200 (Object)</h4>
+                                    <table style="width: 100%;border-collapse: collapse;">
+                                        <thead>
+                                        <tr style="background-color: #f7f7f7;">
+                                            <th style="padding: 6px 8px;border: #e0e0e0 1px solid">Field</th>
+                                            <th style="padding: 6px 8px;border: #e0e0e0 1px solid">Type</th>
+                                            <th style="padding: 6px 8px;border: #e0e0e0 1px solid">Description</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        
+
+                                        
+                                        
+
+                                        
+                                        <tr style="border-bottom: 1px solid silver;">
+                                            <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">product_id</td>
+                                            <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">integer</td>
+                                            <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">Updated product&#39;s id.</td>
+                                        </tr>
+                                        
+                                        
+                                        </tbody>
+                                    </table>
+                                </div>
+                            
+                                <div>
+                                    <h4 style="font-size: 15px;line-height: 1.1;">
+                                    Error 
+                                        500 (Object)</h4>
+                                    <table style="width: 100%;border-collapse: collapse;">
+                                        <thead>
+                                        <tr style="background-color: #f7f7f7;">
+                                            <th style="padding: 6px 8px;border: #e0e0e0 1px solid">Field</th>
+                                            <th style="padding: 6px 8px;border: #e0e0e0 1px solid">Type</th>
+                                            <th style="padding: 6px 8px;border: #e0e0e0 1px solid">Description</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        
+
+                                        
+                                        
+
+                                        
+                                        <tr style="border-bottom: 1px solid silver;">
+                                            <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">code</td>
+                                            <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">integer</td>
+                                            <td style="padding: 12px 8px;border: #e0e0e0 1px solid;"></td>
+                                        </tr>
+                                        
+                                        
+
+                                        
+                                        <tr style="border-bottom: 1px solid silver;">
+                                            <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">message</td>
+                                            <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">string</td>
+                                            <td style="padding: 12px 8px;border: #e0e0e0 1px solid;"></td>
+                                        </tr>
+                                        
+                                        
+
+                                        
+                                        <tr style="border-bottom: 1px solid silver;">
+                                            <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">fields</td>
+                                            <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">string</td>
+                                            <td style="padding: 12px 8px;border: #e0e0e0 1px solid;"></td>
+                                        </tr>
+                                        
+                                        
+                                        </tbody>
+                                    </table>
+                                </div>
+                            
+
+                        </div>
+                    </section>
+                </div>
+            </div>
+            
+            <div style="font-family: sans-serif;
+                  list-style-type: none;
+                  border-radius: 3px;
+                  position: relative;
+                  border: 1px solid #949493;
+                  background-color: #fff;
+                  margin-bottom: 30px">
+                <header style="overflow: hidden;
+                     cursor: pointer;
+                     display: table;
+                     width: 100%;
+                     min-height: 31px;
+                      background-color:  rgba(227,0,18,.1);
+                        ">
+                    <div style="    font-family: monospace;
+                        font-size: 1pc;
+                        padding: .5em;
+                        display: table-cell;
+                        border-top-left-radius: 1px;
+                        margin-right: .4em;
+                        min-width: 68px;
+                        text-align: center;
+                         background-color: #e30012;
+                        
+                        color: #ffffff;
+                        float:left"><a style="color:#FFFFFF" name="/products/:product_id_delete">/products/:product_id DELETE</a>
+                    </div>
+                </header>
+                <div style="padding: 0 1em; font-size: 13px">
+                    <section>
+                        <h4 style="margin:.75em 0; font-size: 15px;line-height: 1.1;">Delete product</h4>
+                    </section>
+                    <section>
+                        <p style="margin: 0 0 12px;">Delete a product with a give ID.</p>
+                    </section>
+                    <section>
+                        <h4 style="font-size: 15px;line-height: 1.1;">Parameters</h4>
+                        <div style="margin: .3em 0 .5em;">
+                            <table style="width: 100%;border-collapse: collapse;">
+                                <thead>
+                                <tr style="background-color: #f7f7f7; font-size: 14px">
+                                    <th style="padding: 6px 8px;border: #e0e0e0 1px solid">Name</th>
+                                    <th style="padding: 6px 8px;border: #e0e0e0 1px solid">Required</th>
+                                    <th style="padding: 6px 8px;border: #e0e0e0 1px solid">Located in</th>
+                                    <th style="padding: 6px 8px;border: #e0e0e0 1px solid">Type</th>
+                                    <th style="padding: 6px 8px;border: #e0e0e0 1px solid; width: 50%;
+                                       ">Description</th>
+
+                                </tr>
+                                </thead>
+                                <tbody>
+                                
+                                <tr>
+                                    <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">product_id</td>
+                                    <td style="padding: 12px 8px;border: #e0e0e0 1px solid;"></td>
+                                    <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">URL</td>
+                                    <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">integer ()</td>
+                                    <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">Product ID.</td>
+                                </tr>
+                                
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                    <section>
+                        <div style=" margin: .3em 0 .5em;">
+
+                            
+                                <div>
+                                    <h4 style="font-size: 15px;line-height: 1.1;">
+                                    Success
+                                        200 (Object)</h4>
+                                    <table style="width: 100%;border-collapse: collapse;">
+                                        <thead>
+                                        <tr style="background-color: #f7f7f7;">
+                                            <th style="padding: 6px 8px;border: #e0e0e0 1px solid">Field</th>
+                                            <th style="padding: 6px 8px;border: #e0e0e0 1px solid">Type</th>
+                                            <th style="padding: 6px 8px;border: #e0e0e0 1px solid">Description</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        
+
+                                        
+                                        
+
+                                        
+                                        <tr style="border-bottom: 1px solid silver;">
+                                            <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">success</td>
+                                            <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">boolean</td>
+                                            <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">&quot;true&quot; for successful delete.</td>
+                                        </tr>
+                                        
+                                        
+                                        </tbody>
+                                    </table>
+                                </div>
+                            
+                                <div>
+                                    <h4 style="font-size: 15px;line-height: 1.1;">
+                                    Error 
+                                        500 (Object)</h4>
+                                    <table style="width: 100%;border-collapse: collapse;">
+                                        <thead>
+                                        <tr style="background-color: #f7f7f7;">
+                                            <th style="padding: 6px 8px;border: #e0e0e0 1px solid">Field</th>
+                                            <th style="padding: 6px 8px;border: #e0e0e0 1px solid">Type</th>
+                                            <th style="padding: 6px 8px;border: #e0e0e0 1px solid">Description</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        
+
+                                        
+                                        
+
+                                        
+                                        <tr style="border-bottom: 1px solid silver;">
+                                            <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">code</td>
+                                            <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">integer</td>
+                                            <td style="padding: 12px 8px;border: #e0e0e0 1px solid;"></td>
+                                        </tr>
+                                        
+                                        
+
+                                        
+                                        <tr style="border-bottom: 1px solid silver;">
+                                            <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">message</td>
+                                            <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">string</td>
+                                            <td style="padding: 12px 8px;border: #e0e0e0 1px solid;"></td>
+                                        </tr>
+                                        
+                                        
+
+                                        
+                                        <tr style="border-bottom: 1px solid silver;">
+                                            <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">fields</td>
+                                            <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">string</td>
+                                            <td style="padding: 12px 8px;border: #e0e0e0 1px solid;"></td>
+                                        </tr>
+                                        
+                                        
+                                        </tbody>
+                                    </table>
+                                </div>
+                            
+
+                        </div>
+                    </section>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+
+</div>
+
+
+
+</body>
+</html>
+

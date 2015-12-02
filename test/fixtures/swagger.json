@@ -1,0 +1,298 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Uber API",
+        "description": "Move your app forward with the Uber API",
+        "version": "1.0.0"
+    },
+    "host": "api.uber.com",
+    "schemes": [
+        "https"
+    ],
+    "basePath": "/v1",
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/products": {
+        "get": {
+          "summary": "Products",
+          "description": "Get all products with all attributes.",
+          "parameters": [
+            {
+              "name": "category",
+              "in": "query",
+              "description": "Filter by product category (e.g., \"gizmo\")",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "tags": [
+            "Products"
+          ],
+          "responses": {
+            "200": {
+              "description": "An array of products",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/Product"
+                }
+              }
+            },
+            "500": {
+              "description": "Unexpected error",
+              "schema": {
+                "$ref": "#/definitions/Error"
+              }
+            }
+          }
+        },
+        "post": {
+          "summary": "Create Product",
+          "description": "Create a product with the provided attributes.",
+          "parameters": [
+            {
+              "name" : "description",
+              "in" : "body",
+              "require" : true,
+              "type": "string",
+              "description": "Description of product."
+            },
+            {
+              "name" : "display_name",
+              "in" : "body",
+              "require" : true,
+              "type": "string",
+              "description": "Display name of product."
+            },
+            {
+              "name" : "category",
+              "in" : "body",
+              "require" : true,
+              "type": "string",
+              "description": "Product category."
+            }
+
+          ],
+          "tags": [
+            "Products"
+          ],
+          "responses": {
+            "200": {
+              "description": "An object with a product id property",
+              "schema": {
+                "type" : "object",
+                "properties" : {
+                  "product_id" : {
+                    "type": "integer",
+                    "description" : "New product's id."
+                  }
+                }
+
+              }
+            },
+            "500": {
+              "description": "Unexpected error",
+              "schema": {
+                "$ref": "#/definitions/Error"
+              }
+            }
+          }
+        }
+      },
+        "/products/:product_id": {
+        "patch": {
+          "summary": "Product patch",
+          "description": "Update a subset of a product's attributes.",
+          "parameters": [
+            {
+              "name" : "product_id",
+              "in" : "URL",
+              "require" : true,
+              "type": "integer",
+              "description": "Product ID."
+            },{
+              "name" : "description",
+              "in" : "body",
+              "require" : false,
+              "type": "string",
+              "description": "Description of product."
+            },
+            {
+              "name" : "display_name",
+              "in" : "body",
+              "require" : false,
+              "type": "string",
+              "description": "Display name of product."
+            },
+            {
+              "name" : "category",
+              "in" : "body",
+              "require" : false,
+              "type": "string",
+              "description": "Product category."
+            }
+
+          ],
+          "tags": [
+            "Products"
+          ],
+          "responses": {
+            "200": {
+              "description": "An object with a product id property",
+              "schema": {
+                "type" : "object",
+                "properties" : {
+                  "product_id" : {
+                    "type": "integer",
+                    "description" : "Updated product's id."
+                  }
+                }
+
+              }
+            },
+            "500": {
+              "description": "Unexpected error",
+              "schema": {
+                "$ref": "#/definitions/Error"
+              }
+            }
+          }
+        },
+        "put":  {
+          "summary": "Product patch",
+          "description": "Update a all of a product's attributes.",
+          "parameters": [
+            {
+              "name" : "product_id",
+              "in" : "URL",
+              "require" : true,
+              "type": "integer",
+              "description": "Product ID."
+            },{
+              "name" : "description",
+              "in" : "body",
+              "require" : true,
+              "type": "string",
+              "description": "Description of product."
+            },
+            {
+              "name" : "display_name",
+              "in" : "body",
+              "require" : true,
+              "type": "string",
+              "description": "Display name of product."
+            },
+            {
+              "name" : "category",
+              "in" : "body",
+              "require" : true,
+              "type": "string",
+              "description": "Product category."
+            }
+
+          ],
+          "tags": [
+            "Products"
+          ],
+          "responses": {
+            "200": {
+              "description": "An object with a product id property",
+              "schema": {
+                "type" : "object",
+                "properties" : {
+                  "product_id" : {
+                    "type": "integer",
+                    "description" : "Updated product's id."
+                  }
+                }
+
+              }
+            },
+            "500": {
+              "description": "Unexpected error",
+              "schema": {
+                "$ref": "#/definitions/Error"
+              }
+            }
+          }
+        },
+        "delete" :{
+          "summary": "Delete product",
+          "description": "Delete a product with a give ID.",
+          "parameters": [
+            {
+              "name" : "product_id",
+              "in" : "URL",
+              "require" : true,
+              "type": "integer",
+              "description": "Product ID."
+            }
+          ],
+          "tags": [
+            "Products"
+          ],
+          "responses": {
+            "200": {
+              "description": "An object with a \"success\" property",
+              "schema": {
+                "type" : "object",
+                "properties" : {
+                  "success" : {
+                    "type": "boolean",
+                    "description" : "\"true\" for successful delete."
+                  }
+                }
+
+              }
+            },
+            "500": {
+              "description": "Unexpected error",
+              "schema": {
+                "$ref": "#/definitions/Error"
+              }
+            }
+          }
+        }
+      }
+    },
+    "definitions": {
+        "Product": {
+            "type": "object",
+            "properties": {
+                "product_id": {
+                    "type": "string",
+                    "description": "Unique identifier representing a specific product for a given latitude & longitude. For example, uberX in San Francisco will have a different product_id than uberX in Los Angeles."
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Description of product."
+                },
+                "display_name": {
+                    "type": "string",
+                    "description": "Display name of product."
+                },
+                "category": {
+                    "type": "string",
+                    "description": "Category of product. For example, \"gizmo\"."
+                }
+            }
+        },
+        "Error": {
+            "type": "object",
+            "properties": {
+                "code": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "message": {
+                    "type": "string"
+                },
+                "fields": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

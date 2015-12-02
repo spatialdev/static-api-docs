@@ -1,0 +1,36 @@
+{
+  "name": "static-api-docs",
+  "version": "0.0.1",
+  "description": "",
+  "repository": "https://github.com/spatialdev/static-api-docs",
+  "author": {
+    "name": "Richard Gwozdz",
+    "email": "rgwozdz@spatialdev.com",
+    "url": ""
+  },
+  "keywords": [
+    "gruntplugin"
+  ],
+  "main": "Gruntfile.js",
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "license": "Apache License 2.0",
+  "devDependencies": {
+    "diff": "^2.2.1",
+    "grunt": "~0.4.2",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-jshint": "~0.8.0",
+    "grunt-contrib-nodeunit": "~0.3.0",
+    "jshint-stylish": "~0.1.5",
+    "load-grunt-tasks": "~0.3.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "dependencies": {
+    "copy": "^0.1.3",
+    "json-refs": "^1.3.0",
+    "lodash": "^3.10.1"
+  }
+}

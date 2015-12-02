@@ -1,0 +1,145 @@
+<div style="font-family: sans-serif;">
+    <h2>{{info.title}}: v{{info.version}}</h2>
+    <div style="list-style-type:none; padding:0;" >
+        {% for path, verbs in paths %}
+        {% for verb, verbProp in verbs %}
+            <div style="margin-bottom: 12px;margin-top: 3px;"><a style ="font-family: monospace;
+               font-size: 1.2em; text-decoration: none" href="#{{path}}_{{verb}}">
+                <span style="color:#08C;">{{path}}</span>
+                <div style="display: inline-block; color: #FFF; border-radius: 3px; padding: .25em .5em;
+                        {% if verb == 'get' %} background-color: #2392f7;
+                        {% elif verb == 'post' %} background-color: #13c20f;
+                        {% elif verb == 'put' %} background-color: #ffdc00;
+                        {% elif verb == 'patch' %} background-color: #ff9000;
+                        {% elif verb == 'delete' %} background-color: #e30012;
+                        {% endif %}">{{verb | upper}}</div></a></div>
+        {% endfor %}
+    {% endfor %}
+    </div>
+</div>
+<hr>
+<div style="list-style-type:none; padding:0; font-family: sans-serif;">
+    {% for path, verbs in paths %}
+    <div style="list-style-type:none; padding:0">
+        <header style ="font-family: monospace;
+               font-size: 1.5em;
+               margin-bottom: 12px;
+               margin-top: 3px; color:#333">{{path}}</header>
+        <div style="list-style-type:none; padding:0">
+            {% for verb, verbProp in verbs %}
+            <div style="font-family: sans-serif;
+                  list-style-type: none;
+                  border-radius: 3px;
+                  position: relative;
+                  border: 1px solid #949493;
+                  background-color: #fff;
+                  margin-bottom: 30px">
+                <header style="overflow: hidden;
+                     cursor: pointer;
+                     display: table;
+                     width: 100%;
+                     min-height: 31px;
+                     {% if verb == 'get' %} background-color: rgba(35,146,247,.1);
+                        {% elif verb == 'post' %} background-color: rgba(19,194,15,.1);
+                        {% elif verb == 'put' %} background-color:  rgba(255,220,0,.1);
+                        {% elif verb == 'patch' %} background-color:  rgba(255,144,0,.1);
+                        {% elif verb == 'delete' %} background-color:  rgba(227,0,18,.1);
+                        {% endif %}">
+                    <div style="    font-family: monospace;
+                        font-size: 1pc;
+                        padding: .5em;
+                        display: table-cell;
+                        border-top-left-radius: 1px;
+                        margin-right: .4em;
+                        min-width: 68px;
+                        text-align: center;
+                        {% if verb == 'get' %} background-color: #2392f7;
+                        {% elif verb == 'post' %} background-color: #13c20f;
+                        {% elif verb == 'put' %} background-color: #ffdc00;
+                        {% elif verb == 'patch' %} background-color: #ff9000;
+                        {% elif verb == 'delete' %} background-color: #e30012;
+                        {% endif %}
+                        color: #ffffff;
+                        float:left"><a style="color:#FFFFFF" name="{{path}}_{{verb}}">{{path}} {{verb | upper }}</a>
+                    </div>
+                </header>
+                <div style="padding: 0 1em; font-size: 13px">
+                    <section>
+                        <h4 style="margin:.75em 0; font-size: 15px;line-height: 1.1;">{{verbProp.summary}}</h4>
+                    </section>
+                    <section>
+                        <p style="margin: 0 0 12px;">{{verbProp.description}}</p>
+                    </section>
+                    <section>
+                        <h4 style="font-size: 15px;line-height: 1.1;">Parameters</h4>
+                        <div style="margin: .3em 0 .5em;">
+                            <table style="width: 100%;border-collapse: collapse;">
+                                <thead>
+                                <tr style="background-color: #f7f7f7; font-size: 14px">
+                                    <th style="padding: 6px 8px;border: #e0e0e0 1px solid">Name</th>
+                                    <th style="padding: 6px 8px;border: #e0e0e0 1px solid">Required</th>
+                                    <th style="padding: 6px 8px;border: #e0e0e0 1px solid">Located in</th>
+                                    <th style="padding: 6px 8px;border: #e0e0e0 1px solid">Type</th>
+                                    <th style="padding: 6px 8px;border: #e0e0e0 1px solid; width: 50%;
+                                       ">Description</th>
+
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for parameter in verbProp.parameters %}
+                                <tr>
+                                    <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">{{parameter.name}}</td>
+                                    <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">{{parameter.required}}</td>
+                                    <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">{{parameter.in}}</td>
+                                    <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">{{parameter.type}} ({{parameter.format}})</td>
+                                    <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">{{parameter.description}}</td>
+                                </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                    <section>
+                        <div style=" margin: .3em 0 .5em;">
+
+                            {% for resKey, resVal in verbProp.responses %}
+                                <div>
+                                    <h4 style="font-size: 15px;line-height: 1.1;">
+                                    {% if resKey == '200' %}Success{% else %}Error {% endif %}
+                                        {{resKey}} ({{resVal.schemaArr[0].type}})</h4>
+                                    <table style="width: 100%;border-collapse: collapse;">
+                                        <thead>
+                                        <tr style="background-color: #f7f7f7;">
+                                            <th style="padding: 6px 8px;border: #e0e0e0 1px solid">Field</th>
+                                            <th style="padding: 6px 8px;border: #e0e0e0 1px solid">Type</th>
+                                            <th style="padding: 6px 8px;border: #e0e0e0 1px solid">Description</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        {% for val in resVal.schemaArr %}
+
+                                        {% if val.depth > -1 %}
+                                        <tr style="border-bottom: 1px solid silver;">
+                                            <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">{% for i in range(0, val.depth) %}&nbsp;{% endfor %}{{val.name}}</td>
+                                            <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">{{val.type}}</td>
+                                            <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">{{val.description}}</td>
+                                        </tr>
+                                        {% endif %}
+                                        {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            {% endfor %}
+
+                        </div>
+                    </section>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endfor %}
+
+</div>
+
+

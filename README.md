@@ -80,11 +80,11 @@ Some example output created by this plugin and some [example JSON](test/fixtures
 ####Table of Contents
 
 
-[/products](#/products_get)&nbsp;&nbsp;![GET](tmpget.png)&nbsp;&nbsp;&nbsp;&nbsp;Products
+[/products](#/products_get)&nbsp;&nbsp;![GET](tmp/get.png)&nbsp;&nbsp;&nbsp;&nbsp;Products
 
 ***
 <br/>
-####<a id="/products_get">/products</a>&nbsp;&nbsp;![GET](tmpget.png)
+####<a id="/products_get">/products</a>&nbsp;&nbsp;![GET](tmp/get.png)
 
 Get all products with all attributes.
 

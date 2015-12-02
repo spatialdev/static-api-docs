@@ -2,7 +2,7 @@
 #### Table of Contents
 {% for path, verbs in paths %}
 {% for verb, verbProp in verbs %}
-[{{path}}](#{{path}}_{{verb}})&nbsp;&nbsp;![{{verb | upper}}]({{verb}}.png)&nbsp;&nbsp;&nbsp;&nbsp;{{verbProp.summary}}
+[{{path}}](#{{path}}_{{verb}})&nbsp;&nbsp;![{{verb | upper}}](https://github.com/spatialdev/static-api-docs/blob/master/images/{{verb}}.png?raw=true)&nbsp;&nbsp;&nbsp;&nbsp;{{verbProp.summary}}
 {% endfor %}
 {% endfor %}
 
@@ -10,7 +10,7 @@
 <br/>
 {% for path, verbs in paths %}
 {% for verb, verbProp in verbs %}
-#### <a id="{{path}}_{{verb}}">{{path}}</a>&nbsp;&nbsp;![{{verb | upper}}]({{verb}}.png)
+#### <a id="{{path}}_{{verb}}">{{path}}</a>&nbsp;&nbsp;![{{verb | upper}}](https://github.com/spatialdev/static-api-docs/blob/master/images/{{verb}}.png?raw=true)
 
 {{verbProp.description}}
 

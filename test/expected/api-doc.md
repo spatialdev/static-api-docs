@@ -2,17 +2,17 @@
 #### Table of Contents
 
 
-[/products](#/products_get)&nbsp;&nbsp;![GET](get.png)&nbsp;&nbsp;&nbsp;&nbsp;Products
+[/products](#/products_get)&nbsp;&nbsp;![GET](https://github.com/spatialdev/static-api-docs/blob/master/images/get.png?raw=true)&nbsp;&nbsp;&nbsp;&nbsp;Products - Get all or some
 
-[/products](#/products_post)&nbsp;&nbsp;![POST](post.png)&nbsp;&nbsp;&nbsp;&nbsp;Create Product
+[/products](#/products_post)&nbsp;&nbsp;![POST](https://github.com/spatialdev/static-api-docs/blob/master/images/post.png?raw=true)&nbsp;&nbsp;&nbsp;&nbsp;Products - Create one
 
 
 
-[/products/:product_id](#/products/:product_id_patch)&nbsp;&nbsp;![PATCH](patch.png)&nbsp;&nbsp;&nbsp;&nbsp;Product patch
+[/products/:product_id](#/products/:product_id_patch)&nbsp;&nbsp;![PATCH](https://github.com/spatialdev/static-api-docs/blob/master/images/patch.png?raw=true)&nbsp;&nbsp;&nbsp;&nbsp;Product patch
 
-[/products/:product_id](#/products/:product_id_put)&nbsp;&nbsp;![PUT](put.png)&nbsp;&nbsp;&nbsp;&nbsp;Product patch
+[/products/:product_id](#/products/:product_id_put)&nbsp;&nbsp;![PUT](https://github.com/spatialdev/static-api-docs/blob/master/images/put.png?raw=true)&nbsp;&nbsp;&nbsp;&nbsp;Product patch
 
-[/products/:product_id](#/products/:product_id_delete)&nbsp;&nbsp;![DELETE](delete.png)&nbsp;&nbsp;&nbsp;&nbsp;Delete product
+[/products/:product_id](#/products/:product_id_delete)&nbsp;&nbsp;![DELETE](https://github.com/spatialdev/static-api-docs/blob/master/images/delete.png?raw=true)&nbsp;&nbsp;&nbsp;&nbsp;Product - Delete one
 
 
 
@@ -20,7 +20,7 @@
 <br/>
 
 
-#### <a id="/products_get">/products</a>&nbsp;&nbsp;![GET](get.png)
+#### <a id="/products_get">/products</a>&nbsp;&nbsp;![GET](https://github.com/spatialdev/static-api-docs/blob/master/images/get.png?raw=true)
 
 Get all products with all attributes.
 
@@ -46,7 +46,7 @@ Get all products with all attributes.
 |fields|string||
 
 
-#### <a id="/products_post">/products</a>&nbsp;&nbsp;![POST](post.png)
+#### <a id="/products_post">/products</a>&nbsp;&nbsp;![POST](https://github.com/spatialdev/static-api-docs/blob/master/images/post.png?raw=true)
 
 Create a product with the provided attributes.
 
@@ -73,7 +73,7 @@ Create a product with the provided attributes.
 
 
 
-#### <a id="/products/:product_id_patch">/products/:product_id</a>&nbsp;&nbsp;![PATCH](patch.png)
+#### <a id="/products/:product_id_patch">/products/:product_id</a>&nbsp;&nbsp;![PATCH](https://github.com/spatialdev/static-api-docs/blob/master/images/patch.png?raw=true)
 
 Update a subset of a product&#39;s attributes.
 
@@ -99,7 +99,7 @@ Update a subset of a product&#39;s attributes.
 |fields|string||
 
 
-#### <a id="/products/:product_id_put">/products/:product_id</a>&nbsp;&nbsp;![PUT](put.png)
+#### <a id="/products/:product_id_put">/products/:product_id</a>&nbsp;&nbsp;![PUT](https://github.com/spatialdev/static-api-docs/blob/master/images/put.png?raw=true)
 
 Update a all of a product&#39;s attributes.
 
@@ -125,7 +125,7 @@ Update a all of a product&#39;s attributes.
 |fields|string||
 
 
-#### <a id="/products/:product_id_delete">/products/:product_id</a>&nbsp;&nbsp;![DELETE](delete.png)
+#### <a id="/products/:product_id_delete">/products/:product_id</a>&nbsp;&nbsp;![DELETE](https://github.com/spatialdev/static-api-docs/blob/master/images/delete.png?raw=true)
 
 Delete a product with a give ID.
 

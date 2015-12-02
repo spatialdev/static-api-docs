@@ -16,7 +16,7 @@
     "paths": {
         "/products": {
         "get": {
-          "summary": "Products",
+          "summary": "Products - Get all or some",
           "description": "Get all products with all attributes.",
           "parameters": [
             {
@@ -49,7 +49,7 @@
           }
         },
         "post": {
-          "summary": "Create Product",
+          "summary": "Products - Create one",
           "description": "Create a product with the provided attributes.",
           "parameters": [
             {
@@ -219,7 +219,7 @@
           }
         },
         "delete" :{
-          "summary": "Delete product",
+          "summary": "Product - Delete one",
           "description": "Delete a product with a give ID.",
           "parameters": [
             {

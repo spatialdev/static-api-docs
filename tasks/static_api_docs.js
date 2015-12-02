@@ -45,7 +45,7 @@ module.exports = function (grunt) {
 
     // directory to copy and source images - from Gruntfile
     var imgDir  = options.imageDir || this.data.dest;
-    apiModel.imageDir = imgDir;
+    apiModel.imageDir = imgDir + '/';
 
     copy.dirSync('images/', imgDir);
 

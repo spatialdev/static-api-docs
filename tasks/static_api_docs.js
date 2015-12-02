@@ -70,8 +70,8 @@ module.exports = function (grunt) {
       });
     });
 
-    grunt.file.write(markdownOutputFile, nunjucks.render(__dirname  + '../templates/snippet.md', apiModel));
-    grunt.file.write(htmlOutputFile, nunjucks.render(__dirname +  '../templates/shell.html', apiModel));
+    grunt.file.write(markdownOutputFile, nunjucks.render(__dirname  + '/../templates/snippet.md', apiModel));
+    grunt.file.write(htmlOutputFile, nunjucks.render(__dirname +  '/../templates/shell.html', apiModel));
     grunt.log.writeln('Files created.');
 
   });

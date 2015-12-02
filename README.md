@@ -73,18 +73,18 @@ grunt.initConfig({
 })
 ```
 
-###Example Input and Output
+### Example Input and Output
 Some example output created by this plugin and some [example JSON](test/fixtures/swagger.json) following [Swagger spec](https://github.com/swagger-api/swagger-spec/blob/master/versions/2.0.md#schema) .
 
 ## Uber API: v1.0.0
-####Table of Contents
+#### Table of Contents
 
 
 [/products](#/products_get)&nbsp;&nbsp;![GET](images/get.png)&nbsp;&nbsp;&nbsp;&nbsp;Products
 
 ***
 <br/>
-####<a id="/products_get">/products</a>&nbsp;&nbsp;![GET](images/get.png)
+#### <a id="/products_get">/products</a>&nbsp;&nbsp;![GET](images/get.png)
 
 Get all products with all attributes.
 
@@ -94,7 +94,7 @@ Get all products with all attributes.
 |category|false|query|string|Filter by product category (e.g., &quot;gizmo&quot;)|
 
 
-#####Success 200 (Object[])
+##### Success 200 (Object[])
 |Name|Type|Description|
 |---|---|---|
 |product_id|string|Unique identifier representing a specific product for a given latitude &amp; longitude. For example, uberX in San Francisco will have a different product_id than uberX in Los Angeles.|
@@ -102,7 +102,7 @@ Get all products with all attributes.
 |display_name|string|Display name of product.|
 |category|string|Category of product. For example, &quot;gizmo&quot;.|
 
-#####Error 500 (Object)
+##### Error 500 (Object)
 |Name|Type|Description|
 |---|---|---|
 |code|integer||

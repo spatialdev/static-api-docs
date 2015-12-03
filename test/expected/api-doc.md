@@ -10,9 +10,9 @@
 
 [/products/:product_id](#/products/:product_id_patch)&nbsp;&nbsp;![PATCH](https://github.com/spatialdev/static-api-docs/blob/master/images/patch.png?raw=true)&nbsp;&nbsp;&nbsp;&nbsp;Product patch
 
-[/products/:product_id](#/products/:product_id_put)&nbsp;&nbsp;![PUT](https://github.com/spatialdev/static-api-docs/blob/master/images/put.png?raw=true)&nbsp;&nbsp;&nbsp;&nbsp;Product patch
+[/products/:product_id](#/products/:product_id_put)&nbsp;&nbsp;![PUT](https://github.com/spatialdev/static-api-docs/blob/master/images/put.png?raw=true)&nbsp;&nbsp;&nbsp;&nbsp;Product put
 
-[/products/:product_id](#/products/:product_id_delete)&nbsp;&nbsp;![DELETE](https://github.com/spatialdev/static-api-docs/blob/master/images/delete.png?raw=true)&nbsp;&nbsp;&nbsp;&nbsp;Product - Delete one
+[/products/:product_id](#/products/:product_id_delete)&nbsp;&nbsp;![DELETE](https://github.com/spatialdev/static-api-docs/blob/master/images/delete.png?raw=true)&nbsp;&nbsp;&nbsp;&nbsp;Product delete
 
 
 
@@ -53,9 +53,9 @@ Create a product with the provided attributes.
 ##### Parameters
 |Name|Required|In|Type|Description|
 |---|---|---|---|---|
-|description||body|string|Description of product.|
-|display_name||body|string|Display name of product.|
-|category||body|string|Product category.|
+|description|true|body|string|Description of product.|
+|display_name|true|body|string|Display name of product.|
+|category|true|body|string|Product category.|
 
 
 ##### Success 200 (Object)
@@ -80,10 +80,10 @@ Update a subset of a product&#39;s attributes.
 ##### Parameters
 |Name|Required|In|Type|Description|
 |---|---|---|---|---|
-|product_id||URL|integer|Product ID.|
-|description||body|string|Description of product.|
-|display_name||body|string|Display name of product.|
-|category||body|string|Product category.|
+|product_id|true|URL|integer|Product ID.|
+|description|false|body|string|Description of product.|
+|display_name|false|body|string|Display name of product.|
+|category|false|body|string|Product category.|
 
 
 ##### Success 200 (Object)
@@ -106,10 +106,10 @@ Update a all of a product&#39;s attributes.
 ##### Parameters
 |Name|Required|In|Type|Description|
 |---|---|---|---|---|
-|product_id||URL|integer|Product ID.|
-|description||body|string|Description of product.|
-|display_name||body|string|Display name of product.|
-|category||body|string|Product category.|
+|product_id|true|URL|integer|Product ID.|
+|description|true|body|string|Description of product.|
+|display_name|true|body|string|Display name of product.|
+|category|true|body|string|Product category.|
 
 
 ##### Success 200 (Object)
@@ -132,7 +132,7 @@ Delete a product with a give ID.
 ##### Parameters
 |Name|Required|In|Type|Description|
 |---|---|---|---|---|
-|product_id||URL|integer|Product ID.|
+|product_id|true|URL|integer|Product ID.|
 
 
 ##### Success 200 (Object)

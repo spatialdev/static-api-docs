@@ -40,13 +40,6 @@ exports.static_api_docs = {
     test.equal(actual, expected, 'Generated file matches expectation');
 
 
-    // Image copy
-    test.equal(grunt.file.exists('tmp/get.png'), true, 'Image file matches expectation');
-    test.equal(grunt.file.exists('tmp/post.png'), true, 'Image file matches expectation');
-    test.equal(grunt.file.exists('tmp/patch.png'), true, 'Image file matches expectation');
-    test.equal(grunt.file.exists('tmp/put.png'), true, 'Image file matches expectation');
-    test.equal(grunt.file.exists('tmp/delete.png'), true, 'Image file matches expectation');
-
     test.done();
   }
 };

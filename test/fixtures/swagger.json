@@ -276,7 +276,29 @@
                 "category": {
                     "type": "string",
                     "description": "Category of product. For example, \"gizmo\"."
+                },
+              "components": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "component_id": {
+                      "type": "integer",
+                      "description": "Unique identifier representing a specific component of a product."
+                    },
+                    "component_name": {
+                      "type": "string",
+                      "description": "Display name of component."
+                    }
+                  }
                 }
+              },
+              "alternative_names": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
             }
         },
         "Error": {

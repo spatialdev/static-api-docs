@@ -33,10 +33,14 @@ Get all products with all attributes.
 ##### Success 200 (Object[])
 |Name|Type|Description|
 |---|---|---|
-|product_id|string|Unique identifier representing a specific product for a given latitude &amp; longitude. For example, uberX in San Francisco will have a different product_id than uberX in Los Angeles.|
+|product_id|string|Unique identifier representing a specific product.|
 |description|string|Description of product.|
 |display_name|string|Display name of product.|
 |category|string|Category of product. For example, &quot;gizmo&quot;.|
+|components|Object[]||
+|-&nbsp;component_id|integer|Unique identifier representing a specific component of a product.|
+|-&nbsp;component_name|string|Display name of component.|
+|alternative_names|String[]||
 
 ##### Error 500 (Object)
 |Name|Type|Description|

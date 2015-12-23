@@ -296,7 +296,8 @@
               "alternative_names": {
                 "type": "array",
                 "items": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Alternative names for this product."
                 }
               }
             }

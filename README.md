@@ -97,6 +97,36 @@ Get all products with all attributes.
 |message|string||
 |fields|string||
 
+----
+### Notes on nested response JSON
+In the event that your response JSON includes nested data, Static API Docs will render the nested properties with indentation. For example, a response property named "components" might be an object array, and can be represented ins Swagger spec JSON like:
+
+	"components": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "component_id": {
+            "type": "integer",
+            "description": "Unique identifier."
+          },
+          "component_name": {
+            "type": "string",
+            "description": "Display name of component."
+          }
+        }
+      }
+    }
+
+The plugin will render the object array like this:  
+ 
+
+|Name|Type|Description|
+|---|---|---|
+|components|Object[]||
+|-&nbsp;component_id|integer|Unique identifier representing a specific component of a product.|
+|-&nbsp;component_name|string|Display name of component.|
+
 
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).

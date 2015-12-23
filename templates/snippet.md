@@ -23,7 +23,7 @@
 ##### {% if resKey == '200' %}Success {% else %}Error {% endif %}{{resKey}} ({{resVal.schemaArr[0].type}})
 |Name|Type|Description|
 |---|---|---|{% for val in resVal.schemaArr %}{% if val.depth > -1 %}
-|{% for i in range(0, val.depth) %}&nbsp;&nbsp;{% endfor %}{{val.name}}|{{val.type}}|{{val.description}}|{% endif %}{% endfor %}
+|{% for i in range(0, val.depth) %}-&nbsp;{% endfor %}{{val.name}}|{{val.type}}|{{val.description}}|{% endif %}{% endfor %}
 {% endfor %}
 {% endfor %}
 {% endfor %}

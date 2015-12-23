@@ -120,7 +120,7 @@
 
                                         {% if val.depth > -1 %}
                                         <tr style="border-bottom: 1px solid silver;">
-                                            <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">{% for i in range(0, val.depth) %}&nbsp;{% endfor %}{{val.name}}</td>
+                                            <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">{% for i in range(0, val.depth) %}-&nbsp;{% endfor %}{{val.name}}</td>
                                             <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">{{val.type}}</td>
                                             <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">{{val.description}}</td>
                                         </tr>

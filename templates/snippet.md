@@ -1,13 +1,21 @@
-## {{info.title}}: v{{info.version}}
-#### Table of Contents
+# {{info.title}}
+### v. {{info.version}}
+
+**Description:**  
+{{ info.description }}
+**Base Path:** {{ basePath }}  
+
+**Example:** http://my-host.com{{ basePath }}/hello  
+    
+## Table of Contents
 {% for path, verbs in paths %}
 {% for verb, verbProp in verbs %}
 [{{path}}](#{{path}}_{{verb}})&nbsp;&nbsp;![{{verb | upper}}](https://github.com/spatialdev/static-api-docs/blob/master/images/{{verb}}.png?raw=true)&nbsp;&nbsp;&nbsp;&nbsp;{{verbProp.summary}}
 {% endfor %}
 {% endfor %}
 
-***
-<br/>
+## API Endpoints
+
 {% for path, verbs in paths %}
 {% for verb, verbProp in verbs %}
 #### <a id="{{path}}_{{verb}}">{{path}}</a>&nbsp;&nbsp;![{{verb | upper}}](https://github.com/spatialdev/static-api-docs/blob/master/images/{{verb}}.png?raw=true)

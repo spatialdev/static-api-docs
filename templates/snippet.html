@@ -1,5 +1,11 @@
 <div style="font-family: sans-serif;">
-    <h2>{{info.title}}: v{{info.version}}</h2>
+    <h1>{{info.title}}</h1>
+    <h3>v. {{info.version}}</h3>
+    <p><strong>Description:</strong></p>
+    <p>{{ info.description }}</p>
+    <p><strong>Basepath: </strong> {{ basePath }}</p>
+    <p><strong>Example: </strong> http://my-host.com{{ basePath }}/hello</p>
+  <h2>Table of Contents</h2>
     <div style="list-style-type:none; padding:0;" >
         {% for path, verbs in paths %}
         {% for verb, verbProp in verbs %}
@@ -18,7 +24,9 @@
     </div>
 </div>
 <hr>
+
 <div style="list-style-type:none; padding:0; font-family: sans-serif;">
+  <h2>API Endpoints</h2>
     {% for path, verbs in paths %}
     <div style="list-style-type:none; padding:0">
         <header style ="font-family: monospace;

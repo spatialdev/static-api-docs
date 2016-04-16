@@ -1,6 +1,6 @@
 # static-api-docs
 
-> Transfrom API documentation stored in [Swagger spec](https://github.com/swagger-api/swagger-spec/blob/master/versions/2.0.md#schema) JSON into formatted markdown and static HTML files. See the example output below.
+> Transfrom API documentation stored in [Swagger spec](https://github.com/swagger-api/swagger-spec/blob/master/versions/2.0.md#schema) YAML into formatted markdown and static HTML files. See the example output below.
 
 ## Getting Started
 This plugin requires Grunt.
@@ -26,10 +26,12 @@ In your project's Gruntfile, add a section named `static_api_docs` to the data o
 grunt.initConfig({
   static_api_docs: {
    your_target: {
-      src: "path/to/the/swagger/spec/JSON/for/API"
+      src: "path/to/the/swagger/spec/YAML/for/API"
       dest: "path/to/the/destination/directory"
       options: {
 		filename: "filename"
+		suppressMD: false
+		suppressHTML: false
 	  }
     },
   },
@@ -43,6 +45,20 @@ Type: `String`
 Default value: `'api-doc'`
 
 A string value that will be the root of the generated files (api-doc.md, api-doc.html).
+
+#### target.options.suppressMD
+Type: `Boolean`
+Default value: `false`
+
+A boolean that turns off generation of markdown output.
+
+
+#### target.options.suppressHTML
+Type: `Boolean`
+Default value: `false`
+
+A boolean that turns off generation of HTML output.
+
 
 ### Usage Examples
 

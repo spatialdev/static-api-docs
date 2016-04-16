@@ -11,7 +11,10 @@
 var fs = require('fs');
 var nunjucks = require('nunjucks');
 var lodash = require('lodash');
+var SwaggerParser = require('swagger-parser');
 var jsonRefs = require('json-refs');
+
+var YAML = require('yamljs');
 
 nunjucks.configure({ autoescape: true });
 
@@ -39,10 +42,24 @@ module.exports = function (grunt) {
     }
 
     // Swagger JSON source
-    var swaggerJSON = require(process.cwd() + '/' + this.data.src);
+    var swaggerYmlFile = process.cwd() + '/' + this.data.src;
+    var swaggerYML = require(swaggerYmlFile);
+
+    SwaggerParser.validate(swaggerYML, function(err, api) {
+      if (err) {
+        grunt.fail.warn(err)
+      }
+      else {
+        grunt.log.write(swaggerYmlFile + " is valid Swagger Spec.")
+      }
+    });
+
+    var swaggerJSON = YAML.load(process.cwd() + '/' + this.data.src);
     var apiModel = jsonRefs.resolveLocalRefs(swaggerJSON).resolved;
 
     var fileName = options.filename ||  "api-doc";
+    var suppressMD = options.supressMD || false;
+    var suppressHTML = options.supressHTML || false;
     var markdownOutputFile = this.data.dest + '/' + fileName + ".md";
     var htmlOutputFile = this.data.dest + '/' + fileName + ".html";
 
@@ -61,8 +78,13 @@ module.exports = function (grunt) {
       });
     });
 
-    grunt.file.write(markdownOutputFile, nunjucks.render(__dirname  + '/../templates/snippet.md', apiModel));
-    grunt.file.write(htmlOutputFile, nunjucks.render(__dirname +  '/../templates/shell.html', apiModel));
+
+    if(!suppressMD) {
+      grunt.file.write(markdownOutputFile, nunjucks.render(__dirname  + '/../templates/snippet.md', apiModel));
+    }
+    if(!suppressHTML) {
+      grunt.file.write(htmlOutputFile, nunjucks.render(__dirname +  '/../templates/shell.html', apiModel));
+    }
     grunt.log.writeln('Files created.');
 
   });

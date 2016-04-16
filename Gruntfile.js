@@ -22,10 +22,10 @@ module.exports = function (grunt) {
     // Configuration to be run (and then tested).
     static_api_docs: {
       test: {
-        src: 'test/fixtures/swagger.json',
+        src: 'test/fixtures/swagger.yaml',
         dest: 'tmp',
         options: {
-          filename: 'api-doc',
+          filename: 'api-doc'
         }
       }
 

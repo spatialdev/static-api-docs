@@ -58,8 +58,8 @@ module.exports = function (grunt) {
     var apiModel = jsonRefs.resolveLocalRefs(swaggerJSON).resolved;
 
     var fileName = options.filename ||  "api-doc";
-    var suppressMD = options.supressMD || false;
-    var suppressHTML = options.supressHTML || false;
+    var suppressMD = options.suppressMD || false;
+    var suppressHTML = options.suppressHTML || false;
     var markdownOutputFile = this.data.dest + '/' + fileName + ".md";
     var htmlOutputFile = this.data.dest + '/' + fileName + ".html";
 

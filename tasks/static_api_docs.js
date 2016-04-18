@@ -43,9 +43,9 @@ module.exports = function (grunt) {
 
     // Swagger JSON source
     var swaggerYmlFile = process.cwd() + '/' + this.data.src;
-    var swaggerYML = require(swaggerYmlFile);
+    //var swaggerYML = require(swaggerYmlFile);
 
-    SwaggerParser.validate(swaggerYML, function(err, api) {
+    SwaggerParser.validate(swaggerYmlFile, function(err, api) {
       if (err) {
         grunt.fail.warn(err)
       }

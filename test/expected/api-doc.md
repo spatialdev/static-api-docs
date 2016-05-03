@@ -5,8 +5,10 @@
 Move your app forward with the Uber API
 **Base Path:** /v1  
 
-**Example:** http://my-host.com/v1/hello  
-    
+
+**Base url:** api.uber.com/v1/ 
+
+
 ## Table of Contents
 
 
@@ -26,10 +28,12 @@ Move your app forward with the Uber API
 
 Get all products with all attributes.
 
+
 ##### Parameters
 |Name|Required|In|Type|Description|
 |---|---|---|---|---|
 |category|false|query|string|Filter by product category (e.g., &quot;gizmo&quot;)|
+
 
 
 ##### Success 200 (Object[])
@@ -58,10 +62,12 @@ Get all products with all attributes.
 
 Update a subset of a product&#39;s attributes.
 
+
 ##### Parameters
 |Name|Required|In|Type|Description|
 |---|---|---|---|---|
 |product_id|true|query|integer|Product ID.|
+
 
 
 ##### Success 200 (Object)

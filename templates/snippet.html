@@ -3,8 +3,9 @@
     <h3>v. {{info.version}}</h3>
     <p><strong>Description:</strong></p>
     <p>{{ info.description }}</p>
-    <p><strong>Basepath: </strong> {{ basePath }}</p>
-    <p><strong>Example: </strong> http://my-host.com{{ basePath }}/hello</p>
+{% if host and basePath %}
+    <p><strong>Base url: </strong> {{ host }}{{ basePath }}/</p>
+{% endif %}
   <h2>Table of Contents</h2>
     <div style="list-style-type:none; padding:0;" >
         {% for path, verbs in paths %}
@@ -78,6 +79,7 @@
                     <section>
                         <p style="margin: 0 0 12px;">{{verbProp.description}}</p>
                     </section>
+                    {% if verbProp.parameters %}
                     <section>
                         <h4 style="font-size: 15px;line-height: 1.1;">Parameters</h4>
                         <div style="margin: .3em 0 .5em;">
@@ -107,6 +109,7 @@
                             </table>
                         </div>
                     </section>
+                    {% endif %}
                     <section>
                         <div style=" margin: .3em 0 .5em;">
 

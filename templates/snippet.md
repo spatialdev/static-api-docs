@@ -5,8 +5,10 @@
 {{ info.description }}
 **Base Path:** {{ basePath }}  
 
-**Example:** http://my-host.com{{ basePath }}/hello  
-    
+{% if host and basePath %}
+**Base url:** {{ host }}{{ basePath }}/ 
+{% endif %}
+
 ## Table of Contents
 {% for path, verbs in paths %}
 {% for verb, verbProp in verbs %}
@@ -22,10 +24,12 @@
 
 {{verbProp.description}}
 
+{% if verbProp.parameters %}
 ##### Parameters
 |Name|Required|In|Type|Description|
 |---|---|---|---|---|{% for parameter in verbProp.parameters %}
 |{{parameter.name}}|{{parameter.required}}|{{parameter.in}}|{{parameter.type}}|{{parameter.description}}|{% endfor %}
+{% endif %}
 
 {% for resKey, resVal in verbProp.responses %}
 ##### {% if resKey == '200' %}Success {% else %}Error {% endif %}{{resKey}} ({{resVal.schemaArr[0].type}})

@@ -76,6 +76,7 @@ definitions:
         description: 'Category of product. For example, "gizmo".'
       components:
         type: array
+        description: Array of component objects
         items:
           type: object
           properties:

@@ -108,7 +108,7 @@ function recurvsiveFlatten(name, obj, arr, depth){
     }
 
     // Add the object or array to the flattened property array
-    arr.push({name: name, type: type, depth: depth});
+    arr.push({name: name, type: type, description: obj.description || '', depth: depth});
 
     // Loop thru the item's properties and execute the recursive function
     lodash.forIn(obj.items.properties, function (val, key) {
@@ -118,7 +118,7 @@ function recurvsiveFlatten(name, obj, arr, depth){
   } else if (obj.hasOwnProperty('properties')) {
 
     // Add the object to the flattened property array
-    arr.push({name: name, type: 'Object', depth: depth});
+    arr.push({name: name, type: 'Object', description: obj.description || '', depth: depth});
 
     // Execute the recursive function on all properties
     lodash.forIn(obj.properties, function(val, key){

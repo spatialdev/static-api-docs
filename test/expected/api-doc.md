@@ -43,7 +43,7 @@ Get all products with all attributes.
 |description|string|Description of product.|
 |display_name|string|Display name of product.|
 |category|string|Category of product. For example, &quot;gizmo&quot;.|
-|components|Object[]||
+|components|Object[]|Array of component objects|
 |-&nbsp;component_id|integer|Unique identifier representing a specific component of a product.|
 |-&nbsp;component_name|string|Display name of component.|
 |alternative_names|String[]||

@@ -14,6 +14,8 @@ Move your app forward with the Uber API
 
 [/products](#/products_get)&nbsp;&nbsp;![GET](https://github.com/spatialdev/static-api-docs/blob/master/images/get.png?raw=true)&nbsp;&nbsp;&nbsp;&nbsp;Products - Get all or some
 
+[/products](#/products_post)&nbsp;&nbsp;![POST](https://github.com/spatialdev/static-api-docs/blob/master/images/post.png?raw=true)&nbsp;&nbsp;&nbsp;&nbsp;Product post
+
 
 
 [/products/:product_id](#/products/:product_id_patch)&nbsp;&nbsp;![PATCH](https://github.com/spatialdev/static-api-docs/blob/master/images/patch.png?raw=true)&nbsp;&nbsp;&nbsp;&nbsp;Product patch
@@ -30,9 +32,9 @@ Get all products with all attributes.
 
 
 ##### Parameters
-|Name|Required|In|Type|Description|
+|Name|In|Required|Type|Description|
 |---|---|---|---|---|
-|category|false|query|string|Filter by product category (e.g., &quot;gizmo&quot;)|
+|category|query|false|string|Filter by product category (e.g., &quot;gizmo&quot;)|
 
 
 
@@ -56,6 +58,32 @@ Get all products with all attributes.
 |fields|string||
 
 
+#### <a id="/products_post">/products</a>&nbsp;&nbsp;![POST](https://github.com/spatialdev/static-api-docs/blob/master/images/post.png?raw=true)
+
+Create a product.
+
+
+##### Parameters
+|Name|In|Required|Type|Description|
+|---|---|---|---|---|
+|name|body|true|string|Product name|
+|tag|body|true|string||
+
+
+
+##### Success 200 (Object)
+|Name|Type|Description|
+|---|---|---|
+|product_id|integer|Updated product&#39;s id.|
+
+##### Error 500 (Object)
+|Name|Type|Description|
+|---|---|---|
+|code|integer||
+|message|string||
+|fields|string||
+
+
 
 
 #### <a id="/products/:product_id_patch">/products/:product_id</a>&nbsp;&nbsp;![PATCH](https://github.com/spatialdev/static-api-docs/blob/master/images/patch.png?raw=true)
@@ -64,9 +92,9 @@ Update a subset of a product&#39;s attributes.
 
 
 ##### Parameters
-|Name|Required|In|Type|Description|
+|Name|In|Required|Type|Description|
 |---|---|---|---|---|
-|product_id|true|query|integer|Product ID.|
+|product_id|query|true|integer|Product ID.|
 
 
 

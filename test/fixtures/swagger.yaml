@@ -42,15 +42,15 @@ paths:
             required: true
             schema:
               type: object
+              required:
+                - name
+                - tag
               properties:
                 name:
                   type: string
                   description: Product name
-                  required: true
                 tag:
                   type: string
-                  description: Product tag
-                  required: true
         tags:
           - Products
         responses:

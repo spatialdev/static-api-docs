@@ -75,13 +75,23 @@ module.exports = function (grunt) {
         var bodyIndex = null;
         verb.parameters.forEach(function(parameter, index){
 
+          var requiredArr = null;
+
           if(parameter.in === 'body') {
 
             bodyIndex = index;
+            if(parameter.schema.hasOwnProperty('required')) {
+              requiredArr = parameter.schema.required;
+            }
+
             lodash.forIn(parameter.schema.properties, function(property, key){
 
-              bodyPars.push({ name: key, in: 'body', description: property.description, required: property.required, type: property.type});
-
+              // Determine if this body parameter is required
+              var required = false;
+              if(requiredArr !== null && requiredArr.indexOf(key) > -1) {
+                required = true;
+              }
+              bodyPars.push({ name: key, in: 'body', description: property.description, required: required, type: property.type});
             });
           }
 

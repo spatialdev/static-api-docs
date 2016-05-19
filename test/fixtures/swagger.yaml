@@ -33,6 +33,39 @@ paths:
           description: Unexpected error
           schema:
             $ref: '#/definitions/Error'
+    post:
+        summary: Product post
+        description: "Create a product."
+        parameters:
+          - name: body
+            in: body
+            required: true
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: Product name
+                  required: true
+                tag:
+                  type: string
+                  description: Product tag
+                  required: true
+        tags:
+          - Products
+        responses:
+          '200':
+            description: An object with a product id property
+            schema:
+              type: object
+              properties:
+                product_id:
+                  type: integer
+                  description: "Updated product's id."
+          '500':
+            description: Unexpected error
+            schema:
+              $ref: '#/definitions/Error'
   '/products/:product_id':
     patch:
       summary: Product patch

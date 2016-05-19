@@ -14,12 +14,6 @@ paths:
     get:
       summary: Products - Get all or some
       description: Get all products with all attributes.
-      parameters:
-        - name: category
-          in: query
-          description: 'Filter by product category (e.g., "gizmo")'
-          required: false
-          type: string
       tags:
         - Products
       responses:

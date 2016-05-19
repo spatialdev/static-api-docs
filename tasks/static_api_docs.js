@@ -67,13 +67,14 @@ module.exports = function (grunt) {
       lodash.forIn(path, function (verb) {
 
 
-        if(verb.parameters.filter(function (parameter) { return parameter.in === 'body'; }).length > 1){
+        if(verb.hasOwnProperty('parameters')
+          && verb.parameters.filter(function (parameter) { return parameter.in === 'body'; }).length > 1){
           grunt.fail.fatal('More than one "body" parameter.  Combine all body parameters into one with name "body" and type "body".')
         };
 
         var bodyPars = [];
         var bodyIndex = null;
-        verb.parameters.forEach(function(parameter, index){
+        lodash.forIn(verb.parameters, function(parameter, index){
 
           var requiredArr = null;
 

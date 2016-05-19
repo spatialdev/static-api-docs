@@ -31,11 +31,6 @@ Move your app forward with the Uber API
 Get all products with all attributes.
 
 
-##### Parameters
-|Name|In|Required|Type|Description|
-|---|---|---|---|---|
-|category|query|false|string|Filter by product category (e.g., &quot;gizmo&quot;)|
-
 
 
 ##### Success 200 (Object[])

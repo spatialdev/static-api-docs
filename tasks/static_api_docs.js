@@ -26,8 +26,6 @@ module.exports = function (grunt) {
     // Merge task-specific and/or target-specific options with these defaults.
     var options = this.options({});
 
-
-
     if(!this.data.hasOwnProperty('src')){
       grunt.log.warn('No "src" property in target: "' + this.target + '".');
       return false;
@@ -47,7 +45,7 @@ module.exports = function (grunt) {
 
     SwaggerParser.validate(swaggerYmlFile, function(err, api) {
       if (err) {
-        grunt.fail.warn(err)
+        grunt.fail.fatal(err)
       }
       else {
         grunt.log.write(swaggerYmlFile + " is valid Swagger Spec.")
@@ -68,12 +66,37 @@ module.exports = function (grunt) {
 
       lodash.forIn(path, function (verb) {
 
+
+        if(verb.parameters.filter(function (parameter) { return parameter.in === 'body'; }).length > 1){
+          grunt.fail.fatal('More than one "body" parameter.  Combine all body parameters into one with name "body" and type "body".')
+        };
+
+        var bodyPars = [];
+        var bodyIndex = null;
+        verb.parameters.forEach(function(parameter, index){
+
+          if(parameter.in === 'body') {
+
+            bodyIndex = index;
+            lodash.forIn(parameter.schema.properties, function(property, key){
+
+              bodyPars.push({ name: key, in: 'body', description: property.description, required: property.required, type: property.type});
+
+            });
+          }
+
+        });
+
+        if(bodyIndex !== null) {
+          verb.parameters.splice(bodyIndex);
+          bodyPars.forEach(function(parameter){
+            verb.parameters.push(parameter);
+          });
+        }
+
         lodash.forIn(verb.responses, function (response) {
-
           response.schemaArr = [];
-
           recurvsiveFlatten(undefined, response.schema, response.schemaArr, -1);
-
         });
       });
     });

@@ -87,8 +87,8 @@
                                 <thead>
                                 <tr style="background-color: #f7f7f7; font-size: 14px">
                                     <th style="padding: 6px 8px;border: #e0e0e0 1px solid">Name</th>
+                                    <th style="padding: 6px 8px;border: #e0e0e0 1px solid">In</th>
                                     <th style="padding: 6px 8px;border: #e0e0e0 1px solid">Required</th>
-                                    <th style="padding: 6px 8px;border: #e0e0e0 1px solid">Located in</th>
                                     <th style="padding: 6px 8px;border: #e0e0e0 1px solid">Type</th>
                                     <th style="padding: 6px 8px;border: #e0e0e0 1px solid; width: 50%;
                                        ">Description</th>
@@ -99,8 +99,8 @@
                                 {% for parameter in verbProp.parameters %}
                                 <tr>
                                     <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">{{parameter.name}}</td>
-                                    <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">{{parameter.required}}</td>
                                     <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">{{parameter.in}}</td>
+                                    <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">{{parameter.required}}</td>
                                     <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">{{parameter.type}}</td>
                                     <td style="padding: 12px 8px;border: #e0e0e0 1px solid;">{{parameter.description}}</td>
                                 </tr>

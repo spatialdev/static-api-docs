@@ -26,9 +26,9 @@
 
 {% if verbProp.parameters %}
 ##### Parameters
-|Name|Required|In|Type|Description|
+|Name|In|Required|Type|Description|
 |---|---|---|---|---|{% for parameter in verbProp.parameters %}
-|{{parameter.name}}|{{parameter.required}}|{{parameter.in}}|{{parameter.type}}|{{parameter.description}}|{% endfor %}
+|{{parameter.name}}|{{parameter.in}}|{{parameter.required}}|{{parameter.type}}|{{parameter.description}}|{% endfor %}
 {% endif %}
 
 {% for resKey, resVal in verbProp.responses %}

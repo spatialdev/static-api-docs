@@ -41,8 +41,8 @@ Get all products with all attributes.
 |display_name|string|Display name of product.|
 |category|string|Category of product. For example, &quot;gizmo&quot;.|
 |components|Object[]|Array of component objects|
-|-&nbsp;component_id|integer|Unique identifier representing a specific component of a product.|
-|-&nbsp;component_name|string|Display name of component.|
+|&nbsp;&nbsp;-&nbsp;component_id|integer|Unique identifier representing a specific component of a product.|
+|&nbsp;&nbsp;-&nbsp;component_name|string|Display name of component.|
 |alternative_names|String[]||
 
 ##### Error 500 (Object)

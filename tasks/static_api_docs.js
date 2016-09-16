@@ -61,11 +61,38 @@ module.exports = function (grunt) {
     var markdownOutputFile = this.data.dest + '/' + fileName + ".md";
     var htmlOutputFile = this.data.dest + '/' + fileName + ".html";
 
+    var pathNames = Object.keys(apiModel.paths);
+    var pathGroups = [];
+    var apiModelObj = {};
+
+    pathNames.forEach(function(k, i){
+
+      var group = k.replace("/","").split("/")[0];
+      var apiModelGroupKeys = Object.keys(apiModelObj);
+      apiModel.paths[k].group = group;
+
+      if(pathGroups.indexOf(group) === -1) {
+        pathGroups.push(group);
+      }
+
+      if(apiModelGroupKeys.indexOf(group) === -1){
+        apiModelObj[group] = [];
+        apiModelObj[group].push(apiModel.paths[k])
+      } else {
+        apiModelObj[group].push(apiModel.paths[k]);
+      }
+
+    });
+
+    apiModel["groups"] = pathGroups;
+    apiModel.groupedModel = apiModelObj;
+
+    console.log(apiModelObj);
+
     // Parse the Swagger schema and reform to our liking
     lodash.forIn(apiModel.paths, function (path) {
 
       lodash.forIn(path, function (verb) {
-
 
         if(verb.hasOwnProperty('parameters')
           && verb.parameters.filter(function (parameter) { return parameter.in === 'body'; }).length > 1){
@@ -161,7 +188,7 @@ function recurvsiveFlatten(name, obj, arr, depth){
   } else {
 
     // Add the property to the flattened property array
-    arr.push({name: name, type: obj.type, description: obj.description, depth: depth});
+    arr.push({name: name, type: obj.type, enum:obj.enum, description: obj.description, depth: depth});
   }
 
 }

@@ -3,34 +3,45 @@
 <!-- No header, and the drawer stays open on larger screens (fixed drawer). -->
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer">
   <div class="mdl-layout__drawer">
-    <span class="mdl-layout-title">Table of Contents</span>
-    <nav class="mdl-navigation">
+    <span class="mdl-layout-title">{{info.title}}</span>
+    <nav class="mdl-navigation navigation">
 
       {% for group, prop in groupedModel %}
-        <h4>{{group}}</h4>
+      <div class="nav-group-header">{{group}}</div>
+
+      <ul class="demo-list-icon mdl-list">
 
       {% for path, verbs in paths %}
 
       {% if verbs.group == group %}
       {% for verb, verbProp in verbs %}
 
-      <a class="mdl-navigation__link" href="#{{path}}_{{verb}}">
-        <span style="color:#08C;">{{path}}</span>
+      {% if verb != 'group' %}
 
-        <div style="display: inline-block; color: #FFF; border-radius: 2px; padding: .15em .75em;
-          {% if verb == 'get' %} background-color: #2392f7;
-          {% elif verb == 'post' %} background-color: #13c20f;
-          {% elif verb == 'put' %} background-color: #ffdc00;
-          {% elif verb == 'patch' %} background-color: #ff9000;
-          {% elif verb == 'delete' %} background-color: #e30012;
-          {% endif %}">{{verb | upper}}
-        </div>
-      </a>
+        <a class="nav-group-links" href="#{{path}}_{{verb}}">
+          <li class="mdl-list__item">
+        <span class="mdl-list__item-primary-content">
+          <div style="display: inline-block; color: #FFF; border-radius: 2px; padding: .5em; margin: 0 10px 0 0;
+            {% if verb == 'get' %} background-color: #2392f7;
+            {% elif verb == 'post' %} background-color: #13c20f;
+            {% elif verb == 'put' %} background-color: #ffdc00;
+            {% elif verb == 'patch' %} background-color: #ff9000;
+            {% elif verb == 'delete' %} background-color: #e30012;
+            {% endif %}">{{verb | upper}}
+          </div>
+            {{path}}
+        </span>
+        </li>
+        </a>
+
+      {% endif %}
 
       {% endfor %}
       {% endif %}
 
       {% endfor %}
+
+      </ul>
 
       {% endfor %}
 

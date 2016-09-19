@@ -62,19 +62,15 @@ module.exports = function (grunt) {
     var htmlOutputFile = this.data.dest + '/' + fileName + ".html";
 
     var pathNames = Object.keys(apiModel.paths);
-    var pathGroups = [];
     var apiModelObj = {};
 
+    // group each call by path
     pathNames.forEach(function(k, i){
-
       var group = k.replace("/","").split("/")[0];
       var apiModelGroupKeys = Object.keys(apiModelObj);
       apiModel.paths[k].group = group;
 
-      if(pathGroups.indexOf(group) === -1) {
-        pathGroups.push(group);
-      }
-
+      // check if group exists & add each verb to group
       if(apiModelGroupKeys.indexOf(group) === -1){
         apiModelObj[group] = [];
         apiModelObj[group].push(apiModel.paths[k])
@@ -83,11 +79,7 @@ module.exports = function (grunt) {
       }
 
     });
-
-    apiModel["groups"] = pathGroups;
     apiModel.groupedModel = apiModelObj;
-
-    console.log(apiModelObj);
 
     // Parse the Swagger schema and reform to our liking
     lodash.forIn(apiModel.paths, function (path) {

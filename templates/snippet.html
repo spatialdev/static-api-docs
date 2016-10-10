@@ -57,7 +57,9 @@
 
       <p>{{ info.description }}</p>
       {% if host and basePath %}
-      <p><strong>Base url: </strong> {{ host }}{{ basePath }}/</p>
+        <p><strong>Base url: </strong> {{ host }}{{ basePath }}/</p>
+      {%  elif host %}
+        <p><strong>Base url: </strong> {{ host }}</p>
       {% endif %}
       <div style="list-style-type:none; padding:0; font-family: sans-serif;">
         <h2>API Endpoints</h2>

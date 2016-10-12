@@ -11,12 +11,58 @@
     .demo-list-icon {
       width: 300px;
     }
+
+    html>body {
+      font-family: 'Roboto','Helvetica','Arial',sans-serif!important;
+      background-color: #FAFAFA;
+    }
+
+    .mdl-list__item {
+      font-size: 12px;
+      padding: 10px;
+    }
+
+    .mdl-list__item:hover {
+      background-color: #eee;
+      cursor: pointer;
+    }
+
+    .nav-group-header {
+      font-size: 14px;
+      margin: 0;
+      text-transform: uppercase;
+      padding: 0 10px;
+      font-weight: 500;
+    }
+
+    .nav-group-links{
+      text-decoration: none;
+      text-transform: none;
+    }
+
   </style>
 </head>
 <body>
   {% include "./snippet.html" %}
 <script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
-<script src="../js/main.js"></script>
+<script>
+  /**
+   * Custom Javacsript
+   *
+   */
+
+// close the left mdl drawer on click
+  function close() {
+    var d = document.querySelector('.mdl-layout');
+
+    if(document.querySelector('.mdl-layout.is-small-screen') !== null){
+      d.MaterialLayout.toggleDrawer();
+    }
+  }
+
+  document.querySelector('.mdl-layout__drawer').addEventListener('click', close);
+
+</script>
 </body>
 </html>
 

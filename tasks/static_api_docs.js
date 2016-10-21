@@ -182,7 +182,7 @@ function recurvsiveFlatten(name, obj, arr, depth){
   } else {
 
     // Add the property to the flattened property array
-    arr.push({name: name, type: obj.type, enum:obj.enum, description: obj.description, depth: depth});
+    arr.push({name: name, type: obj.type, description: obj.description, depth: depth});
   }
 
 }

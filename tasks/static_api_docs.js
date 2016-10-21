@@ -133,6 +133,8 @@ module.exports = function (grunt) {
 
 
     if(!suppressMD) {
+      // remove group from path list
+      pathNames.forEach(function(k, i){ delete apiModel.paths[k].group;});
       grunt.file.write(markdownOutputFile, nunjucks.render(__dirname  + '/../templates/snippet.md', apiModel));
     }
     if(!suppressHTML) {

@@ -63,134 +63,13 @@ paths:
   '/products/:product_id':
     patch:
       summary: Product patch
-      description: "Update a subset of a product's attributessssss."
+      description: "Update a subset of a product's attributes."
       parameters:
-        - name: body
-          in: body
-          schema:
-            type: object
-            properties:
-              name:
-                type: string
-                description: Advertisement Organization name
-                required: true
-      tags:
-        - Products
-      responses:
-        '200':
-          description: An object with a product id property
-          schema:
-            type: object
-            properties:
-              product_id:
-                type: integer
-                description: "Updated product's id."
-        '500':
-          description: Unexpected error
-          schema:
-            $ref: '#/definitions/Error'
-
-  '/orders':
-    patch:
-      summary: Order patch
-      description: "Update a subset of a product's attributessssss."
-      parameters:
-        - name: body
-          in: body
-          schema:
-            type: object
-            properties:
-              name:
-                type: string
-                description: Advertisement Organization name
-                required: true
-      tags:
-        - Products
-      responses:
-        '200':
-          description: An object with a product id property
-          schema:
-            type: object
-            properties:
-              product_id:
-                type: integer
-                description: "Updated product's id."
-        '500':
-          description: Unexpected error
-          schema:
-            $ref: '#/definitions/Error'
-  '/orders/:order_id':
-    patch:
-      summary: Order patch
-      description: "Update a subset of a product's attributessssss."
-      parameters:
-        - name: body
-          in: body
-          schema:
-            type: object
-            properties:
-              name:
-                type: string
-                description: Advertisement Organization name
-                required: true
-      tags:
-        - Products
-      responses:
-        '200':
-          description: An object with a product id property
-          schema:
-            type: object
-            properties:
-              product_id:
-                type: integer
-                description: "Updated product's id."
-        '500':
-          description: Unexpected error
-          schema:
-            $ref: '#/definitions/Error'
-  '/customers':
-    patch:
-      summary: Customer patch
-      description: "Update a subset of a product's attributessssss."
-      parameters:
-        - name: body
-          in: body
-          schema:
-            type: object
-            properties:
-              name:
-                type: string
-                description: Advertisement Organization name
-                required: true
-      tags:
-        - Products
-      responses:
-        '200':
-          description: An object with a product id property
-          schema:
-            type: object
-            properties:
-              product_id:
-                type: integer
-                description: "Updated product's id."
-        '500':
-          description: Unexpected error
-          schema:
-            $ref: '#/definitions/Error'
-  '/customers/:customer_id':
-    patch:
-      summary: Customer patch
-      description: "Update a subset of a product's attributessssss."
-      parameters:
-        - name: body
-          in: body
-          schema:
-            type: object
-            properties:
-              name:
-                type: string
-                description: Advertisement Organization name
-                required: true
+        - name: product_id
+          in: query
+          description: Product ID.
+          required: true
+          type: integer
       tags:
         - Products
       responses:
@@ -219,8 +98,6 @@ definitions:
       display_name:
         type: string
         description: Display name of product.
-        enum: ["This", "That", "Third"]
-
       category:
         type: string
         description: 'Category of product. For example, "gizmo".'

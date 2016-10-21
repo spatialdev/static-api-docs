@@ -32,7 +32,7 @@ exports.static_api_docs = {
     // Markdown creation
     var actual = grunt.file.read('tmp/api-doc.md');
     var expected = grunt.file.read('test/expected/api-doc.md');
-    //test.equal(actual, expected, 'Generated file matches expectation');
+    test.equal(actual, expected, 'Generated file matches expectation');
 
     // HTML creation
     actual = grunt.file.read('tmp/api-doc.html');

@@ -61,11 +61,30 @@ module.exports = function (grunt) {
     var markdownOutputFile = this.data.dest + '/' + fileName + ".md";
     var htmlOutputFile = this.data.dest + '/' + fileName + ".html";
 
+    var pathNames = Object.keys(apiModel.paths);
+    var apiModelObj = {};
+
+    // group each call by path
+    pathNames.forEach(function(k, i){
+      var group = k.replace("/","").split("/")[0];
+      var apiModelGroupKeys = Object.keys(apiModelObj);
+      apiModel.paths[k].group = group;
+
+      // check if group exists & add each verb to group
+      if(apiModelGroupKeys.indexOf(group) === -1){
+        apiModelObj[group] = [];
+        apiModelObj[group].push(apiModel.paths[k])
+      } else {
+        apiModelObj[group].push(apiModel.paths[k]);
+      }
+
+    });
+    apiModel.groupedModel = apiModelObj;
+
     // Parse the Swagger schema and reform to our liking
     lodash.forIn(apiModel.paths, function (path) {
 
       lodash.forIn(path, function (verb) {
-
 
         if(verb.hasOwnProperty('parameters')
           && verb.parameters.filter(function (parameter) { return parameter.in === 'body'; }).length > 1){
@@ -114,6 +133,8 @@ module.exports = function (grunt) {
 
 
     if(!suppressMD) {
+      // remove group from path list
+      pathNames.forEach(function(k, i){ delete apiModel.paths[k].group;});
       grunt.file.write(markdownOutputFile, nunjucks.render(__dirname  + '/../templates/snippet.md', apiModel));
     }
     if(!suppressHTML) {

@@ -134,7 +134,7 @@ module.exports = function (grunt) {
 
     if(!suppressMD) {
       // remove group property from path object for markdown file
-      var apiModelWithoutGroup = Object.assign({}, apiModel);
+      var apiModelWithoutGroup = JSON.parse(JSON.stringify(apiModel));
       pathNames.forEach(function(k, i){ delete apiModelWithoutGroup.paths[k].group;});
       grunt.file.write(markdownOutputFile, nunjucks.render(__dirname  + '/../templates/snippet.md', apiModelWithoutGroup));
     }
